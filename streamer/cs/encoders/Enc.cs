@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Un4seen.Bass.AddOn.Enc;
+using Un4seen.Bass.AddOn.EncOpus;
+using Un4seen.Bass.AddOn.Opus;
 
 namespace strimer.cs.encoders
 {
@@ -27,6 +30,9 @@ namespace strimer.cs.encoders
         public string content = String.Empty;
         public Mixer? mixer;
 
+        public string artist = String.Empty;
+        public string title = String.Empty;
+
         public void SetExe()
         {
             if (current_enc == "opus")
@@ -39,5 +45,16 @@ namespace strimer.cs.encoders
 					exe = Path.Combine(App.app_dir, @"opusenc");
 			}
         }
-    }
+		public void SetTitle(string artist, string title)
+		{
+			this.artist = artist;
+			this.title = title;
+			if (current_enc == "opus")
+            {
+                bool ok = BassEnc_Opus.BASS_Encode_OPUS_NewStream(enc_handle, $"--artist \"{artist}\" --title \"{title}\"" +
+                    $" --bitrate {bitrate} --{bitrate_mode} --{content_type} --comp {complexity}" +
+                    $" --framesize {framesize}", BASSEncode.BASS_ENCODE_OPUS_RESET);
+            }
+		}
+	}
 }

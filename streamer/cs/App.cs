@@ -131,6 +131,7 @@ namespace streamer.cs
         {
             BASSError error = Bass.BASS_ErrorGetCode();
             Console.WriteLine("Error: " + errors[error]);
+            Helper.Log("Error: " + errors[error]);
             Helper.Println("pr_cl");
             Console.ReadKey();
         }

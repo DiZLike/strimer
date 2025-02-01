@@ -1,0 +1,106 @@
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 3 \ 6; Time: 02:34
+Is configured: True
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 3 \ 6; Time: 02:34
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 6 \ 6; Time: 03:48
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 1 \ 6; Time: 05:34
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 5 \ 6; Time: 03:33
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 1 \ 6; Time: 05:34
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 4 \ 6; Time: 03:07
+Is configured: True
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 2 \ 6; Time: 04:12
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 2 \ 6; Time: 04:12
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 3 \ 6; Time: 02:34
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 5 \ 6; Time: 03:33
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 4 \ 6; Time: 03:07
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 5 \ 6; Time: 03:33
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 4 \ 6; Time: 03:07
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 2 \ 6; Time: 04:12
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 1 \ 6; Time: 05:34
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 4 \ 6; Time: 03:07
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 5 \ 6; Time: 03:33
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 5 \ 6; Time: 03:33
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 2 \ 6; Time: 04:12
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 5 \ 6; Time: 03:33
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 5 \ 6; Time: 03:33
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 5 \ 6; Time: 03:33
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 1 \ 6; Time: 05:34
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 3 \ 6; Time: 02:34
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 4 \ 6; Time: 03:07

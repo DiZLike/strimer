@@ -3,6 +3,7 @@ using strimer.cs.encoders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Un4seen.Bass;
@@ -24,6 +25,9 @@ namespace streamer.cs
         private Enc? _encoder;
         private Mixer? _mixer;
 
+		private string _artist = String.Empty;
+		private string _title = String.Empty;
+
         private List<string> _encoders = new()
         {
             "Opus"
@@ -39,16 +43,23 @@ namespace streamer.cs
             Helper.SetParam("app.configured", "yes");
             Helper.SaveParam("strimer");
 
+			/*
             App.is_error = !BassEnc.BASS_Encode_CastInit(_encoder.enc_handle, $"http://{_server}:{_port}/{_stream_link}",
                 $"{_username}:{_password}", _encoder.content, _stream_name, null, _stream_genre, null, null,
                 _encoder.bitrate.ToInt(), BASSEncodeCast.BASS_ENCODE_CAST_PUT);
-            App.IsError();
+			*/
+			
+
+
+
+			App.IsError();
 			Helper.Println("ice_successfully");
 			Console.WriteLine($"Server: http://{_server}:{_port}/{_stream_link}");
 			App.is_error = !Bass.BASS_ChannelPlay(_mixer.main_mixer_handle, true);
 			App.IsError();
 			Helper.Println("b_started");
 			//Console.WriteLine();
+
 		}
 		public void AddStream(int stream)
 		{
@@ -144,5 +155,11 @@ namespace streamer.cs
             if (_encoder_ind == 0) // Opus
                 _encoder = new EncOpus(_mixer);
         }
+		public void SetTitle(string artist, string title)
+		{
+			_artist = artist;
+			_title = title;
+			_encoder.SetTitle(artist, title);
+		}
     }
 }

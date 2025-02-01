@@ -106,6 +106,10 @@ namespace streamer.cs
 		{
 			Helper.GetParam("app.configured");
 		}
+        public static void Log(string text)
+        {
+            File.AppendAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "log.txt"), text + "\n");
+        }
 
 		// ---------------------------------------------------
 		public static string[] Substrings(this string str, string left, string right,

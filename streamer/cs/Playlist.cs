@@ -45,6 +45,7 @@ namespace strimer.cs
 			if(!File.Exists(file_tracklist))
 			{
 				Helper.Println("no_playlist");
+				Helper.Log("No playlist");
 				Console.WriteLine($"List: {file_tracklist}");
 				Console.ReadKey();
 				Environment.Exit(0xFF);

@@ -24,6 +24,7 @@ namespace streamer.cs
 		}
 		private void StartPlaylist()
 		{
+			Helper.Log("Load playlist");
 			string file = Helper.GetParam("radio.playlist");
 			string track_time = String.Empty;
 			_playlist = new(file);
@@ -32,9 +33,13 @@ namespace streamer.cs
 			{
 				if (_player.IsStoped)
 				{
+					Helper.Log("Load track");
 					_player.StreamFree();
+					_player.SetTitle("ewewe", "159");
 					_player.PlayAudio(_playlist.GetRandomTrack());
 					track_time = _player.GetTrackTime();
+					string mes = $"Playing: Track: {_playlist.Current + 1} \\ {_playlist.Count}; Time: {track_time}";
+					Helper.Log(mes);
 					Console.WriteLine();
 				}
 				string track_pos = _player.GetTrackPosition();

@@ -9,14 +9,21 @@ namespace streamer
     {
         private static void Main(string[] args)
         {
-            CheckOS();
-			App.is_configured = Helper.GetParam("app.configured").ToBoolFromWord();
-            if (!App.is_configured)
-			    ReplaceLib();
-            CheckArgs(args);
+            try
+            {
+				CheckOS();
+				App.is_configured = Helper.GetParam("app.configured").ToBoolFromWord();
+				Helper.Log("Is configured: " + App.is_configured.ToString());
+				if (!App.is_configured)
+					ReplaceLib();
+				CheckArgs(args);
 
-            Radio radio = new();
-            Console.ReadKey();
+				Radio radio = new();
+			}
+            catch (Exception ex)
+            {
+				Helper.Log("Error: " + ex.Message);
+			}
         }
         private static void CheckArgs(string[] args)
         {
