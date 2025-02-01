@@ -1,4 +1,5 @@
-﻿using System;
+﻿using strimer.cs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,24 +20,34 @@ namespace streamer.cs
             11025,
             8000
         };
-        
-        private readonly int sample_rate = 44100;
+
+        private readonly int dev;
+		private readonly int sample_rate = 44100;
         private readonly IceCast? ice;
-        public Player()
+        private int _stream = 0;
+
+        public bool IsPlaying { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_PLAYING; } }
+		public bool IsStoped { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_STOPPED; } }
+
+		public Player()
         {
-            int dev = SetAudioDevice();
-            sample_rate = SetFrequency();
+            if (!App.is_configured)
+            {
+                dev = SetAudioDevice();
+                sample_rate = SetFrequency();
+            }
+            else
+            {
+                dev = Helper.GetParam("device.device").ToInt();
+				sample_rate = Helper.GetParam("device.frequency").ToInt();
+			}
             App.is_error = !Bass.BASS_Init(dev, sample_rate, BASSInit.BASS_DEVICE_DEFAULT, IntPtr.Zero);
             App.IsError();
             Helper.Println("is_init");
             Console.WriteLine();
 
-            ice = new(sample_rate);
-            //Plugins plugins = new();
-
-            //BassEnc_Opus.BASS_Encode_OPUS_Start(111, "-", Un4seen.Bass.AddOn.Enc.BASSEncode.BASS_ENCODE_FP_16BIT, null, IntPtr.Zero);
-            //BassAa
-            //Un4seen.Bass.AddOn.Enc.BassEnc.BASS_Encode_CastInit
+			Plugins plugins = new();
+			ice = new(sample_rate);
         }
         private int SetAudioDevice()
         {
@@ -84,5 +95,34 @@ namespace streamer.cs
             Helper.SetParam("device.frequency", frequency[freq].ToString()); // сохранение частоты
             return frequency[freq];
         }
-    }
+        public void PlayAudio(string file)
+        {
+			_stream = Bass.BASS_StreamCreateFile(file, 0, 0, BASSFlag.BASS_STREAM_DECODE);
+            ice.AddStream(_stream);
+		}
+        public string GetTrackPosition()
+        {
+            long raw_pos = Bass.BASS_ChannelGetPosition(_stream);
+            double sec = Bass.BASS_ChannelBytes2Seconds(_stream, raw_pos);
+            DateTime time = new DateTime();
+            time = time.AddSeconds(sec);
+            return time.ToString("mm:ss");
+        }
+        public string GetTrackTime()
+        {
+            long raw_time = Bass.BASS_ChannelGetLength(_stream);
+            double sec = Bass.BASS_ChannelBytes2Seconds(_stream, raw_time);
+			DateTime time = new DateTime();
+			time = time.AddSeconds(sec);
+			return time.ToString("mm:ss");
+		}
+        public void StreamFree()
+        {
+            if (_stream != 0)
+            {
+				App.is_error = !Bass.BASS_StreamFree(_stream);
+				App.IsError();
+			}
+        }
+	}
 }

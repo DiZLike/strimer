@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z3XwWpowxGV0H7KjW3DFGQPJeslyq4xfRl9SwG9QugBoP09i3o1/aqF38Q1wxizjm0G2Oj5oBezdc1Q5beXGAw==",
+  "dgSpecHash": "9n05yigYsg0=",
   "success": true,
-  "projectFilePath": "D:\\Evgeny\\C#\\Strimer\\streamer\\strimer.csproj",
+  "projectFilePath": "D:\\Evgeny\\git\\strimer\\streamer\\strimer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

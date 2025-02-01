@@ -12,8 +12,10 @@ namespace streamer.cs
     {
         public static string OS = String.Empty;
         public static string Arc = String.Empty;
+        public static bool is_configured = false;
 
-        public static string linux_arm = AppDomain.CurrentDomain.BaseDirectory;
+
+		public static string linux_arm = AppDomain.CurrentDomain.BaseDirectory;
         public static string linux_arm64 = AppDomain.CurrentDomain.BaseDirectory;
         public static string linux_x86 = AppDomain.CurrentDomain.BaseDirectory;
         public static string linux_x64 = AppDomain.CurrentDomain.BaseDirectory;
@@ -95,7 +97,9 @@ namespace streamer.cs
             { BASSError.BASS_ERROR_WEBM_NOTAUDIO ,  "BASSWEBM: non-streamable WebM audio" },
             { BASSError.BASS_ERROR_WEBM_TRACK ,  "BASSWEBM: invalid track number" }
         };
-        static App()
+
+        public static string test_opus_file = @"C:\Users\Evgeny\Desktop\Axiom Verge Cover1.opus";
+		static App()
         {
             linux_arm = Path.Combine(linux_arm, "bass_dll", "linux", "armhf");
             linux_arm64 = Path.Combine(linux_arm64, "bass_dll", "linux", "aarch64");
@@ -110,8 +114,8 @@ namespace streamer.cs
 
             os_sel_folder.Add("LinuxX86", linux_x86);
             os_sel_folder.Add("LinuxX64", linux_x64);
-            os_sel_folder.Add("LinuxARM", linux_arm);
-            os_sel_folder.Add("LinuxARM64", linux_arm64);
+            os_sel_folder.Add("LinuxArm", linux_arm);
+            os_sel_folder.Add("LinuxArm64", linux_arm64);
         }
 
         public static void IsError()
@@ -119,6 +123,7 @@ namespace streamer.cs
             if (is_error)
             {
                 GetError();
+                Console.ReadKey();
                 Environment.Exit(0xFF);
             }
         }

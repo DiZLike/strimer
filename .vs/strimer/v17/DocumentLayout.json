@@ -1,22 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\DiZ\\C#\\Strimer\\",
+  "WorkspaceRootPath": "D:\\Evgeny\\git\\strimer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\diz\\c#\\strimer\\streamer\\messages.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\messages.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\evgeny\\git\\strimer\\streamer\\cs\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\diz\\c#\\strimer\\streamer\\cs\\mybass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\mybass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\diz\\c#\\strimer\\streamer\\cs\\icecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\icecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\diz\\c#\\strimer\\streamer\\cs\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\evgeny\\git\\strimer\\streamer\\cs\\radio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\radio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Helper.cs",
-              "DocumentMoniker": "D:\\DiZ\\C#\\Strimer\\streamer\\cs\\Helper.cs",
-              "RelativeDocumentMoniker": "streamer\\cs\\Helper.cs",
-              "ToolTip": "D:\\DiZ\\C#\\Strimer\\streamer\\cs\\Helper.cs",
-              "RelativeToolTip": "streamer\\cs\\Helper.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAqwD4AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T06:28:50.311Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "messages.txt",
-              "DocumentMoniker": "D:\\DiZ\\C#\\Strimer\\streamer\\messages.txt",
-              "RelativeDocumentMoniker": "streamer\\messages.txt",
-              "ToolTip": "D:\\DiZ\\C#\\Strimer\\streamer\\messages.txt",
-              "RelativeToolTip": "streamer\\messages.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-01-26T06:07:34.866Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IceCast.cs",
-              "DocumentMoniker": "D:\\DiZ\\C#\\Strimer\\streamer\\cs\\IceCast.cs",
-              "RelativeDocumentMoniker": "streamer\\cs\\IceCast.cs",
-              "ToolTip": "D:\\DiZ\\C#\\Strimer\\streamer\\cs\\IceCast.cs",
-              "RelativeToolTip": "streamer\\cs\\IceCast.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAqwCMAAAABAAAAAAAAAA==",
+              "Title": "Playlist.cs",
+              "DocumentMoniker": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\Playlist.cs",
+              "RelativeDocumentMoniker": "streamer\\cs\\Playlist.cs",
+              "ToolTip": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\Playlist.cs",
+              "RelativeToolTip": "streamer\\cs\\Playlist.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T06:17:47.499Z",
+              "WhenOpened": "2025-02-01T11:07:03.627Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MyBass.cs",
-              "DocumentMoniker": "D:\\DiZ\\C#\\Strimer\\streamer\\cs\\MyBass.cs",
-              "RelativeDocumentMoniker": "streamer\\cs\\MyBass.cs",
-              "ToolTip": "D:\\DiZ\\C#\\Strimer\\streamer\\cs\\MyBass.cs",
-              "RelativeToolTip": "streamer\\cs\\MyBass.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAiwGAAAAAmAAAAAAAAAA==",
+              "Title": "Radio.cs",
+              "DocumentMoniker": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\Radio.cs",
+              "RelativeDocumentMoniker": "streamer\\cs\\Radio.cs",
+              "ToolTip": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\Radio.cs",
+              "RelativeToolTip": "streamer\\cs\\Radio.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAADwvycAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T06:14:09.298Z",
+              "WhenOpened": "2025-02-01T08:59:04.701Z",
               "EditorCaption": ""
             }
           ]

@@ -7,14 +7,15 @@ namespace streamer
 {
     internal class Program
     {
-        private static Player myBass;
         private static void Main(string[] args)
         {
             CheckOS();
-            ReplaceLib();
+			App.is_configured = Helper.GetParam("app.configured").ToBoolFromWord();
+            if (!App.is_configured)
+			    ReplaceLib();
             CheckArgs(args);
 
-            myBass = new Player();
+            Radio radio = new();
             Console.ReadKey();
         }
         private static void CheckArgs(string[] args)

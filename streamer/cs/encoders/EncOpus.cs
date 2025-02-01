@@ -11,7 +11,6 @@ namespace strimer.cs.encoders
 {
     internal class EncOpus : Enc
     {
-        private Mixer? _mixer;
         private readonly List<string> _bitrates = new()
         {
             "16", "24", "32", "40", "48", "56", "64", "80", "96", "128", "160", "192", "256", "320"
@@ -30,10 +29,14 @@ namespace strimer.cs.encoders
         };
 
         private int _enoder_handle = 0;
-        public EncOpus(Mixer mixer)
+        public EncOpus(Mixer? mixer)
         {
-            this._mixer = mixer;
+            this.mixer = mixer;
             exe = "opusenc";
+            current_enc = "opus";
+            content = "application/ogg";
+
+			SetExe();
             SetBitrate();
             SetBitrateMode();
             SetContentType();
@@ -44,111 +47,138 @@ namespace strimer.cs.encoders
         private void SetBitrate()
         {
             // битрейт
-            Helper.Println("i_bitrate");
-            for (int i = 0; i < _bitrates.Count; i++)
-                Console.WriteLine(i + ": " + _bitrates[i]);
-            do
+            if (!App.is_configured)
             {
-                bitrate_ind = Helper.InputIntln();
-                if (bitrate_ind >= _bitrates.Count)
-                    Helper.Println("no_bitrate");
-                else if (bitrate_ind < 0)
+                Helper.Println("i_bitrate");
+                for (int i = 0; i < _bitrates.Count; i++)
+                    Console.WriteLine(i + ": " + _bitrates[i]);
+                do
                 {
-                    bitrate_ind = 9;
-                    break;
-                }
-                else break;
-            } while (true);
-            bitrate = _bitrates[bitrate_ind];
-            Helper.SetParam("opus.bitrate", _bitrates[bitrate_ind]);
+                    bitrate_ind = Helper.InputIntln();
+                    if (bitrate_ind >= _bitrates.Count)
+                        Helper.Println("no_bitrate");
+                    else if (bitrate_ind < 0)
+                    {
+                        bitrate_ind = 9;
+                        break;
+                    }
+                    else break;
+                } while (true);
+                bitrate = _bitrates[bitrate_ind];
+                Helper.SetParam("opus.bitrate", _bitrates[bitrate_ind]);
+            }
+            else
+                bitrate = Helper.GetParam("opus.bitrate");
+            
         }
         private void SetBitrateMode()
         {
-            // режим
-            Helper.Println("i_bitrate_mode");
-            for (int i = 0; i < _bitrate_modes.Count; i++)
-                Console.WriteLine(i + ": " + _bitrate_modes[i]);
-            do
-            {
-                bitrate_mode_ind = Helper.InputIntln();
-                if (bitrate_mode_ind >= _bitrate_modes.Count)
-                    Helper.Println("no_bitrate_mode");
-                else if (bitrate_mode_ind < 0)
-                {
-                    bitrate_mode_ind = 0;
-                    break;
-                }
-                else break;
-            } while (true);
-            bitrate_mode = _bitrate_modes[bitrate_mode_ind];
-            Helper.SetParam("opus.bitrate_mode", _bitrate_modes[bitrate_mode_ind]);
+			// режим
+			if (!App.is_configured)
+			{
+				Helper.Println("i_bitrate_mode");
+				for (int i = 0; i < _bitrate_modes.Count; i++)
+					Console.WriteLine(i + ": " + _bitrate_modes[i]);
+				do
+				{
+					bitrate_mode_ind = Helper.InputIntln();
+					if (bitrate_mode_ind >= _bitrate_modes.Count)
+						Helper.Println("no_bitrate_mode");
+					else if (bitrate_mode_ind < 0)
+					{
+						bitrate_mode_ind = 0;
+						break;
+					}
+					else break;
+				} while (true);
+				bitrate_mode = _bitrate_modes[bitrate_mode_ind];
+				Helper.SetParam("opus.bitrate_mode", _bitrate_modes[bitrate_mode_ind]);
+			}
+			else
+				bitrate_mode = Helper.GetParam("opus.bitrate_mode");
+			
         }
         private void SetContentType()
         {
-            // тип контента
-            Helper.Println("i_content_type");
-            for (int i = 0; i < _content_types.Count; i++)
-                Console.WriteLine(i + ": " + _content_types[i]);
-            do
-            {
-                content_type_ind = Helper.InputIntln();
-                if (content_type_ind >= _content_types.Count)
-                    Helper.Println("no_content_type");
-                else if (content_type_ind < 0)
-                {
-                    content_type_ind = 0;
-                    break;
-                }
-                else break;
-            } while (true);
-            content_type = _content_types[content_type_ind];
-            Helper.SetParam("opus.content_type", _content_types[content_type_ind]);
-        }
+			// тип контента
+			if (!App.is_configured)
+			{
+				Helper.Println("i_content_type");
+				for (int i = 0; i < _content_types.Count; i++)
+					Console.WriteLine(i + ": " + _content_types[i]);
+				do
+				{
+					content_type_ind = Helper.InputIntln();
+					if (content_type_ind >= _content_types.Count)
+						Helper.Println("no_content_type");
+					else if (content_type_ind < 0)
+					{
+						content_type_ind = 0;
+						break;
+					}
+					else break;
+				} while (true);
+				content_type = _content_types[content_type_ind];
+				Helper.SetParam("opus.content_type", _content_types[content_type_ind]);
+			}
+			else
+			    content_type = Helper.GetParam("opus.content_type");
+
+		}
         private void SetComplexity()
         {
             // сложность
-            Helper.Println("i_complexity");
-            do
+            if (!App.is_configured)
             {
-                complexity = Helper.InputIntln();
-                if (complexity > 10)
-                    Helper.Println("no_complexity");
-                else if (complexity < 0)
+                Helper.Println("i_complexity");
+                do
                 {
-                    complexity = 10;
-                    break;
-                }
-                else break;
-            } while (true);
-            Helper.SetParam("opus.complexity", complexity.ToString());
-        }
+                    complexity = Helper.InputIntln();
+                    if (complexity > 10)
+                        Helper.Println("no_complexity");
+                    else if (complexity < 0)
+                    {
+                        complexity = 10;
+                        break;
+                    }
+                    else break;
+                } while (true);
+                Helper.SetParam("opus.complexity", complexity.ToString());
+            }
+            else
+                complexity = Helper.GetParam("opus.complexity").ToInt();
+		}
         private void SetFramesize()
         {
             // размер кадра
-            Helper.Println("i_framesize");
-            for (int i = 0; i < _frame_sizes.Count; i++)
-                Console.WriteLine(i + ": " + _frame_sizes[i]);
-            do
+            if (!App.is_configured)
             {
-                framesize_ind = Helper.InputIntln();
-                if (framesize_ind >= _frame_sizes.Count)
-                    Helper.Println("no_framesize");
-                else if (framesize_ind < 0)
+                Helper.Println("i_framesize");
+                for (int i = 0; i < _frame_sizes.Count; i++)
+                    Console.WriteLine(i + ": " + _frame_sizes[i]);
+                do
                 {
-                    framesize_ind = 3;
-                    break;
-                }
-                else break;
-            } while (true);
-            framesize = _frame_sizes[framesize_ind];
-            Helper.SetParam("opus.framesize", _frame_sizes[framesize_ind]);
-        }
-
+                    framesize_ind = Helper.InputIntln();
+                    if (framesize_ind >= _frame_sizes.Count)
+                        Helper.Println("no_framesize");
+                    else if (framesize_ind < 0)
+                    {
+                        framesize_ind = 3;
+                        break;
+                    }
+                    else break;
+                } while (true);
+                framesize = _frame_sizes[framesize_ind];
+                Helper.SetParam("opus.framesize", _frame_sizes[framesize_ind]);
+            }
+            else
+                framesize = Helper.GetParam("opus.framesize");
+		}
         public void StartEncoding()
         {
             string options = $"{exe} --bitrate {bitrate} --{bitrate_mode} --{content_type} --comp {complexity} --framesize {framesize} - -";
-            BassEnc_Opus.BASS_Encode_OPUS_Start(111, options, BASSEncode.BASS_ENCODE_FP_16BIT, null, IntPtr.Zero);
-        }
+            enc_handle = BassEnc_Opus.BASS_Encode_OPUS_Start(mixer.main_mixer_handle, options, BASSEncode.BASS_ENCODE_FP_16BIT, null, IntPtr.Zero);
+		}
 
     }
 }

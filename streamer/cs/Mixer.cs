@@ -1,4 +1,5 @@
-﻿using System;
+﻿using streamer.cs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,13 @@ namespace strimer.cs
         }
         public void AddStream(int stream)
         {
-            BassMix.BASS_Mixer_StreamAddChannel(stream, main_mixer_handle, 0);
+            App.is_error = !BassMix.BASS_Mixer_StreamAddChannel(main_mixer_handle, stream, 0);
+            App.IsError();
         }
+        public void RemoveStream(int stream)
+        {
+			App.is_error = !BassMix.BASS_Mixer_ChannelRemove(stream);
+			App.IsError();
+		}
     }
 }

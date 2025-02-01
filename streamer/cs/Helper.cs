@@ -19,10 +19,6 @@ namespace streamer.cs
             LoadConfig();
             configuration.Add("strimer", config);
         }
-        public static int ToInt(this string value)
-        {
-            return int.Parse(value);
-        }
         public static string GetParam(string key)
         {
             for (int i = 0; i < config?.Length; i++)
@@ -106,9 +102,13 @@ namespace streamer.cs
         {
             config = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config", "strimer.conf"));
         }
+		public static void IsConfigured()
+		{
+			Helper.GetParam("app.configured");
+		}
 
-        // ---------------------------------------------------
-        public static string[] Substrings(this string str, string left, string right,
+		// ---------------------------------------------------
+		public static string[] Substrings(this string str, string left, string right,
             int startIndex, StringComparison comparsion = StringComparison.Ordinal)
         {
             if (string.IsNullOrEmpty(str))
@@ -190,5 +190,16 @@ namespace streamer.cs
         {
             return str.Substrings(left, right, 0, comparsion);
         }
-    }
+		public static int ToInt(this string value)
+		{
+			return int.Parse(value);
+		}
+        public static bool ToBoolFromWord(this string value)
+        {
+            if (value == "yes")
+                return true;
+            else
+                return false;
+        }
+	}
 }
