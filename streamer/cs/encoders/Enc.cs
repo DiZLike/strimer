@@ -7,57 +7,58 @@ using System.Threading.Tasks;
 using Un4seen.Bass.AddOn.Enc;
 using Un4seen.Bass.AddOn.EncOpus;
 using Un4seen.Bass.AddOn.Opus;
+using Un4seen.Bass.AddOn.Tags;
 using Un4seen.Bass.Misc;
 
 namespace strimer.cs.encoders
 {
     internal class Enc
     {
-        public BaseEncoder Encoder { get; set; }
+		public BaseEncoder Encoder { get => _encoder; set => _encoder = value; }
+		public Mixer? Mixer { get => _mixer; set => _mixer = value; }
+		public int Bitrate { get => bitrate; set => bitrate = value; }
+		public int Encoder_handle { get => encoder_handle; set => encoder_handle = value; }
+		public string Content { get => content; set => content = value; }
 
-        public string exe = "exe";
-        public static string current_enc = String.Empty;
-        public string prefix_exe = String.Empty;
-        public int bitrate_ind = 0;
-        public int bitrate = 0;
-        public int bitrate_mode_ind = 0;
-        public int content_type_ind = 0;
-        public int complexity = 0;
-        public int framesize_ind = 0;
+		private protected BaseEncoder _encoder;
+		private protected Mixer? _mixer;
 
-        public string bitrate_mode = String.Empty;
-        public string content_type = String.Empty;
-        public string framesize = String.Empty;
+		private protected string exe = "exe";
+		private protected string current_enc = String.Empty;
+		private protected string prefix_exe = String.Empty;
 
-        public int enc_handle = 0;
-        public string content = String.Empty;
-        public Mixer? mixer;
+		private protected int bitrate_ind = 0;
+		private protected int bitrate_mode_ind = 0;
+		private protected int content_type_ind = 0;
 
-        public string artist = String.Empty;
-        public string title = String.Empty;
+		private protected int bitrate = 0;
+		private protected int complexity = 0;
+		private protected int framesize_ind = 0;
 
-        public void SetExe()
+		private protected string bitrate_mode = String.Empty;
+		private protected string content_type = String.Empty;
+		private protected string framesize = String.Empty;
+		private protected string content = String.Empty;
+
+		private protected int encoder_handle = 0;
+
+		public void SetExe()
         {
             if (current_enc == "opus")
             {
-                if (App.Arc == "X64")
+                if (App.Arc.ToLower() == "x64")
                     exe = Path.Combine(App.app_dir, @"encs\opus\win64\opusenc.exe");
-                else if (App.Arc == "X86")
+                else if (App.Arc.ToLower() == "x86")
 					exe = Path.Combine(App.app_dir, @"encs\opus\win32\opusenc.exe");
-                else if (App.Arc == "ARM" || App.Arc == "ARM64")
+                else if (App.Arc.ToLower() == "arm" || App.Arc == "arm64")
 					exe = Path.Combine(App.app_dir, @"opusenc");
 			}
         }
 		public void SetTitle(string artist, string title)
 		{
-			this.artist = artist;
-			this.title = title;
-			if (current_enc == "opus")
-            {
-                bool ok = BassEnc_Opus.BASS_Encode_OPUS_NewStream(enc_handle, $"--artist \"{artist}\" --title \"{title}\"" +
-                    $" --bitrate {bitrate} --{bitrate_mode} --{content_type} --comp {complexity}" +
-                    $" --framesize {framesize}", BASSEncode.BASS_ENCODE_FP_16BIT);
-            }
+			string text = $"--artist \"{artist}\" --title \"{title}\"";
+			string options = $"{exe} --bitrate {bitrate} --{bitrate_mode} --{content_type} --comp{complexity} --framesize {framesize} {text} - -";
+			bool ok = BassEnc_Opus.BASS_Encode_OPUS_NewStream(encoder_handle, options, BASSEncode.BASS_ENCODE_FP_16BIT);
 		}
 	}
 }

@@ -109,13 +109,13 @@ namespace streamer.cs
             windows_x86 = Path.Combine(windows_x86, "bass_dll", "win", "x86");
             windows_x64 = Path.Combine(windows_x64, "bass_dll", "win", "x64");
 
-            os_sel_folder.Add("WindowsX86", windows_x86);
-            os_sel_folder.Add("WindowsX64", windows_x64);
+            os_sel_folder.Add("windowsx86", windows_x86);
+            os_sel_folder.Add("windowsx64", windows_x64);
 
-            os_sel_folder.Add("LinuxX86", linux_x86);
-            os_sel_folder.Add("LinuxX64", linux_x64);
-            os_sel_folder.Add("LinuxArm", linux_arm);
-            os_sel_folder.Add("LinuxArm64", linux_arm64);
+            os_sel_folder.Add("linuxx86", linux_x86);
+            os_sel_folder.Add("linuxx64", linux_x64);
+            os_sel_folder.Add("linuxarm", linux_arm);
+            os_sel_folder.Add("linuxarm64", linux_arm64);
         }
 
         public static void IsError()

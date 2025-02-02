@@ -57,7 +57,7 @@ namespace streamer
         private static void ReplaceLib()
         {
             Helper.Println("rep_l");
-            App.current_os_folder = App.os_sel_folder[App.OS + App.Arc];
+            App.current_os_folder = App.os_sel_folder[App.OS.ToLower() + App.Arc.ToLower()];
             string folder = App.current_os_folder;
             string dotlib = App.dot_lib;
 

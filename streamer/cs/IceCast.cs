@@ -14,7 +14,11 @@ namespace streamer.cs
 {
     internal class IceCast
     {
-        private string? _server;
+		public string? StreamName { get => _stream_name; set => _stream_name = value; }
+		public int Listeners { get => GetListeners(); }
+		public int PeakListeners { get => GetPeakListeners(); }
+
+		private string? _server;
         private string? _port;
         private string? _stream_link;
         private string? _stream_name;
@@ -23,11 +27,8 @@ namespace streamer.cs
         private string? _password;
         private int _encoder_ind;
 
-        private Enc? _encoder;
-        private Mixer? _mixer;
-
-		private string _artist = String.Empty;
-		private string _title = String.Empty;
+		private Enc _encoder = null!;
+		private Mixer _mixer = null!;
 
         private List<string> _encoders = new()
         {
@@ -44,55 +45,21 @@ namespace streamer.cs
             Helper.SetParam("app.configured", "yes");
             Helper.SaveParam("strimer");
 
-			
-            //App.is_error = !BassEnc.BASS_Encode_CastInit(_encoder.Encoder.EncoderHandle, $"http://{_server}:{_port}/{_stream_link}",
-            //    $"{_username}:{_password}", _encoder.content, _stream_name, null, _stream_genre, null, null,
-            //    _encoder.bitrate, BASSEncodeCast.BASS_ENCODE_CAST_PUT);
-			NEW_Cast_Init();
-			
-
-
-
-			App.IsError();
+			NEW2_Cast_Init();
 			Helper.Println("ice_successfully");
 			Console.WriteLine($"Server: http://{_server}:{_port}/{_stream_link}");
-			//App.is_error = !Bass.BASS_ChannelPlay(_mixer.main_mixer_handle, true);
-			//App.IsError();
+			
 			Helper.Println("b_started");
-			//Console.WriteLine();
-
+			App.is_error = !Bass.BASS_ChannelPlay(_mixer.main_mixer_handle, true);
+			App.IsError();
 		}
-		public void NEW_Cast_Init()
+
+		public void NEW2_Cast_Init()
 		{
-            App.is_error = !Bass.BASS_ChannelPlay(_mixer.main_mixer_handle, true);
-            App.IsError();
-
-            ICEcast icecast = new ICEcast(_encoder.Encoder);
-			icecast.ServerAddress = _server;
-			icecast.ServerPort = _port.ToInt();
-			icecast.Username = _username;
-			icecast.Password = _password;
-			icecast.MountPoint = "/" + _stream_link;
-			icecast.Quality = _encoder.bitrate.ToString();
-			icecast.StreamGenre = _stream_genre;
-			icecast.StreamName = _stream_name;
-			icecast.UsePUT = true;
-			icecast.UseSSL = false;
-            var r = icecast.UpdateArtistTitle("bb", "bbbbf");
-			//icecast.Connect();
-			Thread.Sleep(2000);
-            
-            BroadCast broadcast = new BroadCast(icecast);
-            broadcast.Notification += Broadcast_Notification;
-			broadcast.AutoReconnect = true;
-			broadcast.AutoConnect();
+			string url = $"http://{_server}:{_port}/{_stream_link}";
+			bool cast_status = BassEnc.BASS_Encode_CastInit(_encoder.Encoder_handle, url, $"{_username}:{_password}",
+				_encoder.Content, _stream_name, null, _stream_genre, null, null, _encoder.Bitrate, BASSEncodeCast.BASS_ENCODE_CAST_PUT);
 		}
-
-        private void Broadcast_Notification(object sender, BroadCastEventArgs e)
-        {
-            
-        }
-
         public void AddStream(int stream)
 		{
 			_mixer.AddStream(stream);
@@ -187,5 +154,49 @@ namespace streamer.cs
             if (_encoder_ind == 0) // Opus
                 _encoder = new EncOpus(_mixer);
         }
+		private string GetStatus()
+		{
+			return BassEnc.BASS_Encode_CastGetStats(_encoder.Encoder_handle, BASSEncodeStats.BASS_ENCODE_STATS_ICESERV, _password);
+		}
+		private int GetListeners()
+		{
+			string raw_status = GetStatus();
+			string left = $"<source mount=\"/{_stream_link}\">";
+			string right = "</source>";
+
+			string[] ar_source = raw_status.Substrings(left, right);
+			if (ar_source.Length > 0)
+			{
+				left = "<listeners>";
+				right = "</listeners>";
+				string[] ar_listeners = ar_source.First().Substrings(left, right);
+				if (ar_listeners.Length > 0)
+					return ar_listeners.First().ToInt();
+				else return 0;
+			}
+			else return 0;
+		}
+		private int GetPeakListeners()
+		{
+			string raw_status = GetStatus();
+			string left = $"<source mount=\"/{_stream_link}\">";
+			string right = "</source>";
+
+			string[] ar_source = raw_status.Substrings(left, right);
+			if (ar_source.Length > 0)
+			{
+				left = "<listener_peak>";
+				right = "</listener_peak>";
+				string[] ar_listeners = ar_source.First().Substrings(left, right);
+				if (ar_listeners.Length > 0)
+					return ar_listeners.First().ToInt();
+				else return 0;
+			}
+			else return 0;
+		}
+		public void SetTitle(string artist, string title)
+		{
+			_encoder.SetTitle(artist, title);
+		}
     }
 }

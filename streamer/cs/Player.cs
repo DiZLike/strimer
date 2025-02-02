@@ -5,13 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Un4seen.Bass;
-using Un4seen.Bass.AddOn.EncOpus;
+using Un4seen.Bass.AddOn.Tags;
 
 namespace streamer.cs
 {
     internal class Player
     {
-        private readonly List<int> frequency = new()
+        public int Listeners { get => ice.Listeners; }
+		public int PeakListeners { get => ice.PeakListeners; }
+
+		private readonly List<int> frequency = new()
         {
             48000,
             44100,
@@ -20,10 +23,9 @@ namespace streamer.cs
             11025,
             8000
         };
-
         private readonly int dev;
 		private readonly int sample_rate = 44100;
-        private readonly IceCast? ice;
+        private readonly IceCast ice = null!;
         private int _stream = 0;
 
         public bool IsPlaying { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_PLAYING; } }
@@ -95,10 +97,19 @@ namespace streamer.cs
             Helper.SetParam("device.frequency", frequency[freq].ToString()); // сохранение частоты
             return frequency[freq];
         }
-        public void PlayAudio(string file)
+        public TAG_INFO PlayAudio(string file)
         {
 			_stream = Bass.BASS_StreamCreateFile(file, 0, 0, BASSFlag.BASS_STREAM_DECODE);
             ice.AddStream(_stream);
+            TAG_INFO tag_info = new TAG_INFO(file);
+            if (tag_info.artist.Length == 0)
+                tag_info.artist = ice.StreamName;
+            if (tag_info.title.Length == 0)
+            {
+                string new_title = Path.GetFileNameWithoutExtension(file);
+                tag_info.title = new_title;
+            }
+            return tag_info;
 		}
         public string GetTrackPosition()
         {
@@ -116,6 +127,10 @@ namespace streamer.cs
 			time = time.AddSeconds(sec);
 			return time.ToString("mm:ss");
 		}
+        public void SetTitle(string artist, string title)
+        {
+            ice.SetTitle(artist, title);
+        }
         public void StreamFree()
         {
             if (_stream != 0)
