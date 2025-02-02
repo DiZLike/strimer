@@ -24,4 +24,4 @@ Setting up a playlist:
 Open the settings file "strimer.conf" in the application folder (path: <application folder>\config). Find the [Radio] section and enter the path to your playlist in the "radio.playlist" key.
 
 Playlist file syntax:
-Each new track is added from a new line in the format "track=<track path>?;".
+Each new track is added from a new line in the format "track=track path?;".
