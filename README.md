@@ -1,3 +1,10 @@
+A program for creating your own online radio.
+The following functions are currently implemented:
+- Broadcast to ICEcast servers;
+- Encoding a stream using the OPUS codec;
+- Reading and passing tags to the stream (but not to the server page);
+- Track randomizer.
+
 Launching the app:
 Upon first launch, the application will identify your operating system and copy the necessary libraries,
 depending on the architecture of your computer. Then you will need to follow a few steps:
