@@ -35,7 +35,6 @@ namespace streamer.cs
 				{
 					Helper.Log("Load track");
 					_player.StreamFree();
-					_player.SetTitle("ewewe", "159");
 					_player.PlayAudio(_playlist.GetRandomTrack());
 					track_time = _player.GetTrackTime();
 					string mes = $"Playing: Track: {_playlist.Current + 1} \\ {_playlist.Count}; Time: {track_time}";

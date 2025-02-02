@@ -104,3 +104,170 @@ Is configured: True
 Load playlist
 Load track
 Playing: Track: 4 \ 6; Time: 03:07
+Is configured: False
+Load playlist
+No playlist
+Is configured: True
+Load playlist
+Load track
+Error: Invalid handle
+Is configured: True
+Load playlist
+Load track
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 5 \ 6; Time: 03:33
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 1 \ 6; Time: 05:34
+Load track
+Playing: Track: 6 \ 6; Time: 03:48
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 6 \ 6; Time: 03:48
+Load track
+Playing: Track: 5 \ 6; Time: 03:33
+Load track
+Playing: Track: 3 \ 6; Time: 02:34
+Load track
+Playing: Track: 2 \ 6; Time: 04:12
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 4 \ 6; Time: 03:07
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 2 \ 6; Time: 04:12
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 4 \ 6; Time: 03:07
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 4 \ 6; Time: 03:07
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 4 \ 6; Time: 03:07
+Is configured: True
+Is configured: True
+Is configured: True
+Error: Encoder does NOT exist!
+Is configured: True
+Error: Encoder does NOT exist!
+Is configured: True
+Is configured: True
+Error: Encoder does NOT exist!
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Error: Invalid handle
+Is configured: True
+Error: Invalid handle
+Is configured: True
+Error: Invalid handle
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 6 \ 6; Time: 03:48
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Is configured: True
+Error: All is OK 
+Is configured: True
+Error: All is OK 
+Is configured: True
+Is configured: True
+Is configured: True
+Error: All is OK 
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 4 \ 6; Time: 03:07
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 3 \ 6; Time: 02:34
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 1 \ 6; Time: 05:34
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 4 \ 6; Time: 03:07
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 1 \ 6; Time: 05:34
+Is configured: True
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 4 \ 6; Time: 03:07
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 3 \ 6; Time: 02:34
+Is configured: True
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 6 \ 6; Time: 03:48
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 3 \ 6; Time: 02:34
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 1 \ 6; Time: 05:34
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 6 \ 6; Time: 03:48
+Is configured: True
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 6 \ 6; Time: 03:48
+Is configured: True
+Is configured: True
+Is configured: True
+Load playlist
+Load track
+Playing: Track: 1 \ 6; Time: 05:34

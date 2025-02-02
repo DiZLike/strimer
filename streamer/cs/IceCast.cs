@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Un4seen.Bass;
 using Un4seen.Bass.AddOn.Enc;
+using Un4seen.Bass.Misc;
 
 namespace streamer.cs
 {
@@ -43,11 +44,11 @@ namespace streamer.cs
             Helper.SetParam("app.configured", "yes");
             Helper.SaveParam("strimer");
 
-			/*
-            App.is_error = !BassEnc.BASS_Encode_CastInit(_encoder.enc_handle, $"http://{_server}:{_port}/{_stream_link}",
-                $"{_username}:{_password}", _encoder.content, _stream_name, null, _stream_genre, null, null,
-                _encoder.bitrate.ToInt(), BASSEncodeCast.BASS_ENCODE_CAST_PUT);
-			*/
+			
+            //App.is_error = !BassEnc.BASS_Encode_CastInit(_encoder.Encoder.EncoderHandle, $"http://{_server}:{_port}/{_stream_link}",
+            //    $"{_username}:{_password}", _encoder.content, _stream_name, null, _stream_genre, null, null,
+            //    _encoder.bitrate, BASSEncodeCast.BASS_ENCODE_CAST_PUT);
+			NEW_Cast_Init();
 			
 
 
@@ -55,13 +56,44 @@ namespace streamer.cs
 			App.IsError();
 			Helper.Println("ice_successfully");
 			Console.WriteLine($"Server: http://{_server}:{_port}/{_stream_link}");
-			App.is_error = !Bass.BASS_ChannelPlay(_mixer.main_mixer_handle, true);
-			App.IsError();
+			//App.is_error = !Bass.BASS_ChannelPlay(_mixer.main_mixer_handle, true);
+			//App.IsError();
 			Helper.Println("b_started");
 			//Console.WriteLine();
 
 		}
-		public void AddStream(int stream)
+		public void NEW_Cast_Init()
+		{
+            App.is_error = !Bass.BASS_ChannelPlay(_mixer.main_mixer_handle, true);
+            App.IsError();
+
+            ICEcast icecast = new ICEcast(_encoder.Encoder);
+			icecast.ServerAddress = _server;
+			icecast.ServerPort = _port.ToInt();
+			icecast.Username = _username;
+			icecast.Password = _password;
+			icecast.MountPoint = "/" + _stream_link;
+			icecast.Quality = _encoder.bitrate.ToString();
+			icecast.StreamGenre = _stream_genre;
+			icecast.StreamName = _stream_name;
+			icecast.UsePUT = true;
+			icecast.UseSSL = false;
+            var r = icecast.UpdateArtistTitle("bb", "bbbbf");
+			//icecast.Connect();
+			Thread.Sleep(2000);
+            
+            BroadCast broadcast = new BroadCast(icecast);
+            broadcast.Notification += Broadcast_Notification;
+			broadcast.AutoReconnect = true;
+			broadcast.AutoConnect();
+		}
+
+        private void Broadcast_Notification(object sender, BroadCastEventArgs e)
+        {
+            
+        }
+
+        public void AddStream(int stream)
 		{
 			_mixer.AddStream(stream);
 		}
@@ -155,11 +187,5 @@ namespace streamer.cs
             if (_encoder_ind == 0) // Opus
                 _encoder = new EncOpus(_mixer);
         }
-		public void SetTitle(string artist, string title)
-		{
-			_artist = artist;
-			_title = title;
-			_encoder.SetTitle(artist, title);
-		}
     }
 }

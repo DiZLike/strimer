@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Un4seen.Bass;
 using Un4seen.Bass.AddOn.Enc;
 using Un4seen.Bass.AddOn.EncOpus;
+using Un4seen.Bass.Misc;
 
 namespace strimer.cs.encoders
 {
@@ -27,6 +29,21 @@ namespace strimer.cs.encoders
         {
             "2.5", "5", "10", "20", "40", "60"
         };
+        private readonly Dictionary<string, EncoderOPUS.OPUSMode> _opus_mode = new()
+        {
+            { "vbr", EncoderOPUS.OPUSMode.VBR },
+            { "cvbr", EncoderOPUS.OPUSMode.CVBR },
+            { "cbr", EncoderOPUS.OPUSMode.CBR }
+        };
+        private readonly Dictionary<string, EncoderOPUS.OPUSFramesize> _framesize = new()
+        {
+            { "2.5", EncoderOPUS.OPUSFramesize.f2_5ms },
+            { "5", EncoderOPUS.OPUSFramesize.f5ms },
+            { "10", EncoderOPUS.OPUSFramesize.f10ms },
+            { "20", EncoderOPUS.OPUSFramesize.f20ms },
+            { "40", EncoderOPUS.OPUSFramesize.f40ms },
+            { "60", EncoderOPUS.OPUSFramesize.f60ms }
+        };
 
         private int _enoder_handle = 0;
         public EncOpus(Mixer? mixer)
@@ -42,7 +59,8 @@ namespace strimer.cs.encoders
             SetContentType();
             SetComplexity();
             SetFramesize();
-            StartEncoding();
+            //StartEncoding();
+            NEW_StartEncode();
         }
         private void SetBitrate()
         {
@@ -64,11 +82,11 @@ namespace strimer.cs.encoders
                     }
                     else break;
                 } while (true);
-                bitrate = _bitrates[bitrate_ind];
+                bitrate = _bitrates[bitrate_ind].ToInt();
                 Helper.SetParam("opus.bitrate", _bitrates[bitrate_ind]);
             }
             else
-                bitrate = Helper.GetParam("opus.bitrate");
+                bitrate = Helper.GetParam("opus.bitrate").ToInt();
             
         }
         private void SetBitrateMode()
@@ -179,6 +197,27 @@ namespace strimer.cs.encoders
             string options = $"{exe} --bitrate {bitrate} --{bitrate_mode} --{content_type} --comp {complexity} --framesize {framesize} - -";
             enc_handle = BassEnc_Opus.BASS_Encode_OPUS_Start(mixer.main_mixer_handle, options, BASSEncode.BASS_ENCODE_FP_16BIT, null, IntPtr.Zero);
 		}
+        public void NEW_StartEncode()
+        {
+            //string s = @"C:\Users\Evgeny\Desktop\pls\Electronic Super Joy _ Groove City - Ginseng.mp3";
+            //int str = Bass.BASS_StreamCreateFile(s, 0, 0, BASSFlag.BASS_DEFAULT);
+            
+            Encoder = new EncoderOPUS(mixer.main_mixer_handle);
+            ((EncoderOPUS)Encoder).EncoderDirectory = Path.GetDirectoryName(exe);
+            ((EncoderOPUS)Encoder).InputFile = null;
+            ((EncoderOPUS)Encoder).OutputFile = null;
+            ((EncoderOPUS)Encoder).OPUS_Bitrate = bitrate;
+            ((EncoderOPUS)Encoder).OPUS_Mode = _opus_mode[bitrate_mode];
+            ((EncoderOPUS)Encoder).OPUS_CustomOptions = $"--{content_type}";
+            ((EncoderOPUS)Encoder).OPUS_Complexity = complexity;
+            ((EncoderOPUS)Encoder).OPUS_Framesize = _framesize[framesize];
+            //((EncoderBassEnc_Opus)Encoder).Start(ENCODEPROC, IntPtr.Zero, false);
+            //App.is_error = Bass.BASS_ChannelPlay(mixer.main_mixer_handle, true);
+        }
+        public void ENCODEPROC(int handle, int channel, IntPtr buffer, int length, IntPtr user)
+        {
+
+        }
 
     }
 }

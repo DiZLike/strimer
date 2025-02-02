@@ -116,10 +116,6 @@ namespace streamer.cs
 			time = time.AddSeconds(sec);
 			return time.ToString("mm:ss");
 		}
-        public void SetTitle(string artist, string title)
-        {
-            ice.SetTitle(artist, title);
-        }
         public void StreamFree()
         {
             if (_stream != 0)
