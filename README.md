@@ -17,7 +17,7 @@ depending on the architecture of your computer. Then you will need to follow a f
 - Come up with a name for the broadcast.
 - Select the broadcast genre.
 - Enter the parameters corresponding to the selected encoder.
-- The initial setup is complete. The program will close with a playlist error (so far this is normal).
+The initial setup is complete. The program will close with a playlist error (so far this is normal).
 
 Setting up a playlist:
 Open the settings file "strimer.conf" in the application folder (path: <application folder>\config). Find the [Radio] section and enter the path to your playlist in the "radio.playlist" key.
