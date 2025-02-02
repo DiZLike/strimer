@@ -1,4 +1,6 @@
 ﻿using streamer.cs;
+using strimer;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using Un4seen;
 using Un4seen.Bass;
@@ -7,10 +9,13 @@ namespace streamer
 {
     internal class Program
     {
-        private static void Main(string[] args)
+		public static readonly Assembly Reference = typeof(Program).Assembly;
+        public static readonly Version? Version = Reference.GetName().Version;
+		private static void Main(string[] args)
         {
             try
             {
+                Console.WriteLine($"Version: {Version.Major}.{Version.Minor}.{Version.Build}");
 				CheckOS();
 				App.is_configured = Helper.GetParam("app.configured").ToBoolFromWord();
 				Helper.Log("Is configured: " + App.is_configured.ToString());

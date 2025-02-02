@@ -15,13 +15,13 @@ namespace strimer.cs.encoders
     internal class Enc
     {
 		public BaseEncoder Encoder { get => _encoder; set => _encoder = value; }
-		public Mixer? Mixer { get => _mixer; set => _mixer = value; }
+		public Mixer Mixer { get => _mixer; set => _mixer = value; }
 		public int Bitrate { get => bitrate; set => bitrate = value; }
 		public int Encoder_handle { get => encoder_handle; set => encoder_handle = value; }
 		public string Content { get => content; set => content = value; }
 
-		private protected BaseEncoder _encoder;
-		private protected Mixer? _mixer;
+		private protected BaseEncoder _encoder = null!;
+		private protected Mixer _mixer = null!;
 
 		private protected string exe = "exe";
 		private protected string current_enc = String.Empty;

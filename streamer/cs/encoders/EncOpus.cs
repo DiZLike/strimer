@@ -45,7 +45,7 @@ namespace strimer.cs.encoders
             { "40", EncoderOPUS.OPUSFramesize.f40ms },
             { "60", EncoderOPUS.OPUSFramesize.f60ms }
         };
-        public EncOpus(Mixer? mixer)
+        public EncOpus(Mixer mixer)
         {
             this._mixer = mixer;
             current_enc = "opus";

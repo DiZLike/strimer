@@ -5,18 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\evgeny\\git\\strimer\\streamer\\config\\strimer.conf||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\config\\strimer.conf||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\evgeny\\git\\strimer\\streamer\\cs\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\evgeny\\git\\strimer\\streamer\\cs\\icecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\icecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\evgeny\\git\\strimer\\streamer\\cs\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,48 +24,9 @@
               "RelativeDocumentMoniker": "streamer\\config\\strimer.conf",
               "ToolTip": "D:\\Evgeny\\git\\strimer\\streamer\\config\\strimer.conf",
               "RelativeToolTip": "streamer\\config\\strimer.conf",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-02T20:54:56.55Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Helper.cs",
-              "DocumentMoniker": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\Helper.cs",
-              "RelativeDocumentMoniker": "streamer\\cs\\Helper.cs",
-              "ToolTip": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\Helper.cs",
-              "RelativeToolTip": "streamer\\cs\\Helper.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAAwM4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T20:44:55.895Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Player.cs",
-              "DocumentMoniker": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\Player.cs",
-              "RelativeDocumentMoniker": "streamer\\cs\\Player.cs",
-              "ToolTip": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\Player.cs",
-              "RelativeToolTip": "streamer\\cs\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T20:03:30.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IceCast.cs",
-              "DocumentMoniker": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\IceCast.cs",
-              "RelativeDocumentMoniker": "streamer\\cs\\IceCast.cs",
-              "ToolTip": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\IceCast.cs",
-              "RelativeToolTip": "streamer\\cs\\IceCast.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAxwBgAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T19:20:49.089Z",
+              "WhenOpened": "2025-02-02T21:44:54Z",
               "EditorCaption": ""
             }
           ]

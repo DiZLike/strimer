@@ -12,10 +12,10 @@ namespace strimer.cs
 	{
 		private string _file_playlist = String.Empty;
 		private string _raw_playlist = String.Empty;
-		private string[]? _playlist;
+		private string[] _playlist = null!;
 		private int _current_track = 0;
 		private List<string> _playback_history = new();
-		private Random? _random;
+		private Random _random = null!;
 
 		public int Count { get { return _playlist.Length; } }
 		public int Current { get { return _current_track; } }
