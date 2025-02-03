@@ -32,7 +32,9 @@ namespace streamer.cs
 			{
 				if (_player.IsStoped)
 				{
-					Helper.Log("Load track");
+					bool cast_status = _player.Ice.NEW2_Cast_Init();
+                    Console.WriteLine($"Cast reconnect: {cast_status}");
+                    Helper.Log("Load track");
 					_player.StreamFree();
 					tags = _player.PlayAudio(_playlist.GetRandomTrack());
 					_player.SetTitle(tags.artist, tags.title);

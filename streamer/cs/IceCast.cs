@@ -46,22 +46,29 @@ namespace streamer.cs
             Helper.SetParam("app.configured", "yes");
             Helper.SaveParam("strimer");
 
-			NEW2_Cast_Init();
-			Helper.Println("ice_successfully");
-			Console.WriteLine($"Server: http://{_server}:{_port}/{_stream_link}");
+			//NEW2_Cast_Init();
+			
 			
 			Helper.Println("b_started");
-			App.is_error = !Bass.BASS_ChannelPlay(_mixer.main_mixer_handle, true);
 			App.IsError();
 		}
 
-		public void NEW2_Cast_Init()
+		public bool NEW2_Cast_Init()
 		{
 			string url = $"http://{_server}:{_port}/{_stream_link}";
 			bool cast_status = BassEnc.BASS_Encode_CastInit(_encoder.Encoder_handle, url, $"{_username}:{_password}",
 				_encoder.Content, _stream_name, null, _stream_genre, null, null, _encoder.Bitrate,
 				BASSEncodeCast.BASS_ENCODE_CAST_PUT);
-		}
+
+            App.is_error = !Bass.BASS_ChannelPlay(_mixer.main_mixer_handle, true);
+
+            Helper.Println("ice_successfully");
+            Console.WriteLine($"Server: http://{_server}:{_port}/{_stream_link}");
+
+
+            
+			return cast_status;
+        }
         public void AddStream(int stream)
 		{
 			_mixer.AddStream(stream);

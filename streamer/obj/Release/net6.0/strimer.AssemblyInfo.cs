@@ -13,8 +13,8 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("strimer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("0.2.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47657f3e7c7f10ba12afdd8ce29342c3458f3a73")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("0.2.1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d05f8d59bd673a8d8432aeefd6c76de0269268b")]
 [assembly: System.Reflection.AssemblyProductAttribute("strimer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("strimer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.2.1")]

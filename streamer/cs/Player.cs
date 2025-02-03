@@ -11,6 +11,7 @@ namespace streamer.cs
 {
     internal class Player
     {
+        public IceCast Ice => ice;
         public int Listeners { get => ice.Listeners; }
 		public int PeakListeners { get => ice.PeakListeners; }
 
@@ -30,8 +31,7 @@ namespace streamer.cs
 
         public bool IsPlaying { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_PLAYING; } }
 		public bool IsStoped { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_STOPPED; } }
-
-		public Player()
+        public Player()
         {
             if (!App.is_configured)
             {
