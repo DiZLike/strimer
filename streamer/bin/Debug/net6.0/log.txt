@@ -26,3 +26,8 @@ Is configured: False
 Load playlist
 Load track
 Playing: stream - Electronic Super Joy _ Groove City - Ginseng [2\6; Listeners: 0\0]
+Is configured: False
+Is configured: True
+Load playlist
+Load track
+Playing: stream - Electronic Super Joy _ Groove City - Ginseng [2\6; Listeners: 0\0]

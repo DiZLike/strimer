@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("strimer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.2.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47657f3e7c7f10ba12afdd8ce29342c3458f3a73")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+973826541a25cc9133a57c7e9765045faef975f8")]
 [assembly: System.Reflection.AssemblyProductAttribute("strimer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("strimer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.2.1")]

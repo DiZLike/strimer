@@ -15,14 +15,14 @@ namespace strimer.cs
 		private string[] _playlist = null!;
 		private int _current_track = 0;
 		private List<string> _playback_history = new();
-		private Random _random = null!;
+		//private Random _random = null!;
 
 		public int Count { get { return _playlist.Length; } }
 		public int Current { get { return _current_track; } }
 
 		public Audiolist(string file_tracklist)
 		{
-			_random = new Random((int)DateTime.Now.Ticks);
+			//_random = new Random((int)DateTime.Now.Ticks);
 			this._file_playlist = file_tracklist;
 			CheckPlaylistFile(file_tracklist);
 			LoadPlaylist();
@@ -35,7 +35,7 @@ namespace strimer.cs
 				available_tracks = _playlist.ToList();
 				_playback_history.Clear();
 			}
-			int index = _random.Next(0, available_tracks.Count);
+			int index = Random.Shared.Next(0, available_tracks.Count);
 			_playback_history.Add(available_tracks[index]);
 			_current_track = _playlist.ToList().IndexOf(available_tracks[index]);
 			return available_tracks[index];
