@@ -108,6 +108,7 @@ namespace streamer.cs
 		}
         public static void Log(string text)
         {
+            text = $"{DateTime.Now.ToString("yyyy-MM-dd H:mm:ss")} > {text}";
             File.AppendAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "log.txt"), text + "\n");
         }
 

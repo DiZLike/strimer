@@ -17,8 +17,9 @@ namespace streamer.cs
 		public string? StreamName { get => _stream_name; set => _stream_name = value; }
 		public int Listeners { get => GetListeners(); }
 		public int PeakListeners { get => GetPeakListeners(); }
+        public Enc Encoder { get => _encoder; set => _encoder = value; }
 
-		private string? _server;
+        private string? _server;
         private string? _port;
         private string? _stream_link;
         private string? _stream_name;
@@ -58,7 +59,8 @@ namespace streamer.cs
 		{
 			string url = $"http://{_server}:{_port}/{_stream_link}";
 			bool cast_status = BassEnc.BASS_Encode_CastInit(_encoder.Encoder_handle, url, $"{_username}:{_password}",
-				_encoder.Content, _stream_name, null, _stream_genre, null, null, _encoder.Bitrate, BASSEncodeCast.BASS_ENCODE_CAST_PUT);
+				_encoder.Content, _stream_name, null, _stream_genre, null, null, _encoder.Bitrate,
+				BASSEncodeCast.BASS_ENCODE_CAST_PUT);
 		}
         public void AddStream(int stream)
 		{

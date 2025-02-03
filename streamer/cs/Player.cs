@@ -100,6 +100,10 @@ namespace streamer.cs
         public TAG_INFO PlayAudio(string file)
         {
 			_stream = Bass.BASS_StreamCreateFile(file, 0, 0, BASSFlag.BASS_STREAM_DECODE);
+
+            Helper.Log($"Track stream: {_stream}");
+            //Helper.Log($"Track stream: {ice.}");
+
             ice.AddStream(_stream);
             TAG_INFO tag_info = new TAG_INFO(file);
             if (tag_info.artist.Length == 0)

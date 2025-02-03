@@ -212,7 +212,7 @@ namespace strimer.cs.encoders
             ((EncoderOPUS)_encoder).OPUS_CustomOptions = $"--{content_type}";
             ((EncoderOPUS)_encoder).OPUS_Complexity = complexity;
             ((EncoderOPUS)_encoder).OPUS_Framesize = _framesize[framesize];
-		}
+        }
 		
 	}
 }
