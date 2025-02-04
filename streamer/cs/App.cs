@@ -122,18 +122,20 @@ namespace streamer.cs
         {
             if (is_error)
             {
-                GetError();
-                Console.ReadKey();
-                Environment.Exit(0xFF);
+                var error = GetError();
+                //Console.ReadKey();
+                if (error != BASSError.BASS_ERROR_HANDLE)
+                    Environment.Exit(0xFF);
             }
         }
-        private static void GetError()
+        private static BASSError GetError()
         {
             BASSError error = Bass.BASS_ErrorGetCode();
             Console.WriteLine("Error: " + errors[error]);
             Helper.Log("Error: " + errors[error]);
             Helper.Println("pr_cl");
-            Console.ReadKey();
+            //Console.ReadKey();
+            return error;
         }
     }
 }

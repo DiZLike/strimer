@@ -1,0 +1,15 @@
+F:\git\strimer\list_creater\bin\Release\net6.0\list_creater.exe
+F:\git\strimer\list_creater\bin\Release\net6.0\list_creater.deps.json
+F:\git\strimer\list_creater\bin\Release\net6.0\list_creater.runtimeconfig.json
+F:\git\strimer\list_creater\bin\Release\net6.0\list_creater.dll
+F:\git\strimer\list_creater\bin\Release\net6.0\list_creater.pdb
+F:\git\strimer\list_creater\obj\Release\net6.0\list_creater.GeneratedMSBuildEditorConfig.editorconfig
+F:\git\strimer\list_creater\obj\Release\net6.0\list_creater.AssemblyInfoInputs.cache
+F:\git\strimer\list_creater\obj\Release\net6.0\list_creater.AssemblyInfo.cs
+F:\git\strimer\list_creater\obj\Release\net6.0\list_creater.csproj.CoreCompileInputs.cache
+F:\git\strimer\list_creater\obj\Release\net6.0\list_creater.sourcelink.json
+F:\git\strimer\list_creater\obj\Release\net6.0\list_creater.dll
+F:\git\strimer\list_creater\obj\Release\net6.0\refint\list_creater.dll
+F:\git\strimer\list_creater\obj\Release\net6.0\list_creater.pdb
+F:\git\strimer\list_creater\obj\Release\net6.0\list_creater.genruntimeconfig.cache
+F:\git\strimer\list_creater\obj\Release\net6.0\ref\list_creater.dll

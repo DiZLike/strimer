@@ -1,1 +1,1 @@
-list_creater "E:\Desktop\test_dir" "/home/ftpuser/Radio/main/" "E:\Desktop\test.pls"
+list_creater "E:\Downloads" "/home/ftpuser/Radio/main/" "E:\Desktop\test.pls"

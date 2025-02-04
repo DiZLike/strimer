@@ -16,7 +16,8 @@ namespace streamer
             try
             {
                 Console.WriteLine($"Version: {Version.Major}.{Version.Minor}.{Version.Build}");
-				CheckOS();
+                Helper.Log($"Version: {Version.Major}.{Version.Minor}.{Version.Build}");
+                CheckOS();
 				App.is_configured = Helper.GetParam("app.configured").ToBoolFromWord();
 				Helper.Log("Is configured: " + App.is_configured.ToString());
 				if (!App.is_configured)
