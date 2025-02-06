@@ -72,3 +72,78 @@ Playing: stream - Electronic Super Joy _ Groove City - Ginseng [2\6; Listeners: 
 2025-02-06 14:27:03 > Is configured: True
 2025-02-06 14:29:55 > Version: 0.2.3
 2025-02-06 14:29:55 > Is configured: True
+2025-02-06 19:02:26 > Version: 0.2.3
+2025-02-06 19:02:26 > Is configured: True
+2025-02-06 19:02:38 > Load playlist
+2025-02-06 19:02:38 > No playlist
+2025-02-06 19:02:54 > Version: 0.2.3
+2025-02-06 19:02:54 > Is configured: True
+2025-02-06 19:02:54 > Load playlist
+2025-02-06 19:02:54 > No playlist
+2025-02-06 19:03:25 > Version: 0.2.3
+2025-02-06 19:03:26 > Is configured: True
+2025-02-06 19:03:26 > Load playlist
+2025-02-06 19:03:26 > Cast status: All is OK 
+2025-02-06 19:03:26 > Error: Invalid handle
+2025-02-06 19:03:26 > Load track: Axiom Verge Cover1.opus
+2025-02-06 19:03:26 > Track stream: -2147483642
+2025-02-06 19:03:30 > Playing: stream - Axiom Verge Cover1 [1\6; Listeners: 0\0]
+2025-02-06 19:05:16 > Version: 0.2.3
+2025-02-06 19:05:16 > Is configured: True
+2025-02-06 19:05:16 > Load playlist
+2025-02-06 19:05:18 > Cast status: All is OK 
+2025-02-06 19:05:18 > Error: Invalid handle
+2025-02-06 19:05:18 > Load track: Electronic Super Joy _ Groove City - Ginseng.mp3
+2025-02-06 19:05:18 > Track stream: -2147483642
+2025-02-06 19:05:31 > Playing: stream - Electronic Super Joy _ Groove City - Ginseng [2\6; Listeners: 0\0]
+2025-02-06 19:11:24 > Version: 0.2.3
+2025-02-06 19:11:24 > Is configured: True
+2025-02-06 19:12:28 > Version: 0.2.3
+2025-02-06 19:12:28 > Is configured: True
+2025-02-06 19:12:39 > Version: 0.2.3
+2025-02-06 19:12:39 > Is configured: True
+2025-02-06 19:12:50 > Load playlist
+2025-02-06 19:12:50 > Cast status: All is OK 
+2025-02-06 19:12:50 > Error: Invalid handle
+2025-02-06 19:12:50 > Load track: Nes Covers - Jurassic park.mp3
+2025-02-06 19:12:50 > Track stream: -2147483642
+2025-02-06 19:12:53 > Playing: stream - Nes Covers - Jurassic park [4\6; Listeners: 0\0]
+2025-02-06 19:13:14 > Version: 0.2.3
+2025-02-06 19:13:14 > Is configured: True
+2025-02-06 19:13:14 > Load playlist
+2025-02-06 19:13:14 > Cast status: All is OK 
+2025-02-06 19:13:14 > Error: Invalid handle
+2025-02-06 19:13:14 > Load track: Shovel Knight - An Underlying Problem.mp3
+2025-02-06 19:13:14 > Track stream: -2147483642
+2025-02-06 19:13:17 > Playing: stream - Shovel Knight - An Underlying Problem [6\6; Listeners: 0\0]
+2025-02-06 19:13:58 > Version: 0.2.3
+2025-02-06 19:13:58 > Is configured: True
+2025-02-06 19:13:58 > Load playlist
+2025-02-06 19:13:59 > Cast status: All is OK 
+2025-02-06 19:13:59 > Error: Invalid handle
+2025-02-06 19:13:59 > Load track: Shovel Knight - An Underlying Problem.mp3
+2025-02-06 19:13:59 > Track stream: -2147483642
+2025-02-06 19:14:01 > Playing: stream - Shovel Knight - An Underlying Problem [6\6; Listeners: 0\0]
+2025-02-06 19:15:37 > Version: 0.2.3
+2025-02-06 19:15:37 > Is configured: True
+2025-02-06 19:15:37 > Load playlist
+2025-02-06 19:15:38 > Cast status: All is OK 
+2025-02-06 19:15:38 > Error: Invalid handle
+2025-02-06 19:15:38 > Load track: Axiom Verge Cover1.opus
+2025-02-06 19:15:38 > Track stream: -2147483642
+2025-02-06 19:15:40 > Version: 0.2.3
+2025-02-06 19:15:40 > Is configured: True
+2025-02-06 19:15:40 > Load playlist
+2025-02-06 19:15:40 > Cast status: All is OK 
+2025-02-06 19:15:40 > Error: Invalid handle
+2025-02-06 19:15:40 > Load track: Shovel Knight - An Underlying Problem.mp3
+2025-02-06 19:15:40 > Track stream: -2147483642
+2025-02-06 19:15:42 > Playing: stream - Shovel Knight - An Underlying Problem [6\6; Listeners: 0\0]
+2025-02-06 19:23:10 > Version: 0.2.3
+2025-02-06 19:23:10 > Is configured: True
+2025-02-06 19:23:10 > Load playlist
+2025-02-06 19:23:10 > Cast status: All is OK 
+2025-02-06 19:24:56 > Version: 0.2.3
+2025-02-06 19:24:56 > Is configured: True
+2025-02-06 19:24:56 > Load playlist
+2025-02-06 19:24:57 > Cast status: All is OK 

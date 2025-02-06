@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Un4seen.Bass;
 using Un4seen.Bass.AddOn.Enc;
 using Un4seen.Bass.AddOn.EncOpus;
 using Un4seen.Bass.AddOn.Opus;
@@ -59,6 +60,11 @@ namespace strimer.cs.encoders
 			string text = $"--artist \"{artist}\" --title \"{title}\"";
 			string options = $"{exe} --bitrate {bitrate} --{bitrate_mode} --{content_type} --comp{complexity} --framesize {framesize} {text} - -";
 			bool ok = BassEnc_Opus.BASS_Encode_OPUS_NewStream(encoder_handle, options, BASSEncode.BASS_ENCODE_FP_16BIT);
+		}
+		public void GetEncoderStatus()
+		{
+			BASSActive status = BassEnc.BASS_Encode_IsActive(encoder_handle);
+			Helper.Log($"Encoder status: {status.ToString()}");
 		}
 	}
 }

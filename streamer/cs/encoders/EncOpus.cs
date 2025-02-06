@@ -199,7 +199,6 @@ namespace strimer.cs.encoders
         {
             string options = $"{exe} --bitrate {bitrate} --{bitrate_mode} --{content_type} --comp{complexity} --framesize {framesize} - -";
             encoder_handle = BassEnc_Opus.BASS_Encode_OPUS_Start(_mixer.main_mixer_handle, options, BASSEncode.BASS_ENCODE_FP_16BIT, null, IntPtr.Zero);
-
 		}
         public void NEW_StartEncode()
         {
