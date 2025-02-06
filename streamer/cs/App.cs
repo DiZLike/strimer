@@ -128,14 +128,18 @@ namespace streamer.cs
                     Environment.Exit(0xFF);
             }
         }
-        private static BASSError GetError()
+        public static BASSError GetError()
         {
             BASSError error = Bass.BASS_ErrorGetCode();
             Console.WriteLine("Error: " + errors[error]);
             Helper.Log("Error: " + errors[error]);
             Helper.Println("pr_cl");
-            //Console.ReadKey();
             return error;
+        }
+        public static string GetErrorMessage()
+        {
+            BASSError error = Bass.BASS_ErrorGetCode();
+            return errors[error];
         }
     }
 }

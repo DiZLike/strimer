@@ -27,10 +27,12 @@ namespace streamer.cs
         private readonly int dev;
 		private readonly int sample_rate = 44100;
         private readonly IceCast ice = null!;
+        private readonly Mixer _mixer = null!;
         private int _stream = 0;
 
         public bool IsPlaying { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_PLAYING; } }
 		public bool IsStoped { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_STOPPED; } }
+
         public Player()
         {
             if (!App.is_configured)
@@ -99,10 +101,18 @@ namespace streamer.cs
         }
         public TAG_INFO PlayAudio(string file)
         {
-			_stream = Bass.BASS_StreamCreateFile(file, 0, 0, BASSFlag.BASS_STREAM_DECODE);
-
+            ice.RemoveStream(_stream);
+            StreamFree();
+            Helper.Log($"Load track: {Path.GetFileName(file)}");
+            _stream = Bass.BASS_StreamCreateFile(file, 0, 0, BASSFlag.BASS_STREAM_DECODE);
+            if (_stream == 0)
+            {
+                Helper.Log($"Stream ERROR! File: {Path.GetFileName(file)}");
+                Console.WriteLine($"Stream ERROR! Message: {App.GetErrorMessage()}");
+                Helper.Log($"Stream ERROR! Message: {App.GetErrorMessage()}");
+                return null!;
+            }
             Helper.Log($"Track stream: {_stream}");
-            //Helper.Log($"Track stream: {ice.}");
 
             ice.AddStream(_stream);
             TAG_INFO tag_info = new TAG_INFO(file);

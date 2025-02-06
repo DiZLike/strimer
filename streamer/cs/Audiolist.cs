@@ -58,7 +58,6 @@ namespace strimer.cs
 			if (_playlist.Length == 0)
 			{
 				Helper.Println("er_playlist");
-				Console.ReadKey();
 				Environment.Exit(0xFF);
 			}
 		}

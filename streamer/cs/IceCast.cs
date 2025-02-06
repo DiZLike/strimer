@@ -55,10 +55,15 @@ namespace streamer.cs
 
 		public bool NEW2_Cast_Init()
 		{
-			string url = $"http://{_server}:{_port}/{_stream_link}";
-			bool cast_status = BassEnc.BASS_Encode_CastInit(_encoder.Encoder_handle, url, $"{_username}:{_password}",
+			bool cast_error = false;
+
+            string url = $"http://{_server}:{_port}/{_stream_link}";
+			App.is_error = cast_error = !BassEnc.BASS_Encode_CastInit(_encoder.Encoder_handle, url, $"{_username}:{_password}",
 				_encoder.Content, _stream_name, null, _stream_genre, null, null, _encoder.Bitrate,
 				BASSEncodeCast.BASS_ENCODE_CAST_PUT);
+
+			Console.WriteLine($"Cast status: {App.GetErrorMessage()}");
+			Helper.Log($"Cast status: {App.GetErrorMessage()}");
 
             App.is_error = !Bass.BASS_ChannelPlay(_mixer.main_mixer_handle, true);
 
@@ -67,7 +72,7 @@ namespace streamer.cs
 
 
             
-			return cast_status;
+			return cast_error;
         }
         public void AddStream(int stream)
 		{

@@ -1,10 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\git\\strimer\\",
+  "WorkspaceRootPath": "D:\\DiZ\\git\\strimer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|f:\\git\\strimer\\streamer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\diz\\git\\strimer\\streamer\\cs\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\diz\\git\\strimer\\streamer\\cs\\radio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\radio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\diz\\git\\strimer\\streamer\\cs\\audiolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\audiolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\diz\\git\\strimer\\streamer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\diz\\git\\strimer\\streamer\\cs\\icecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\icecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\diz\\git\\strimer\\streamer\\cs\\app.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\app.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\git\\strimer\\streamer\\Program.cs",
-              "RelativeDocumentMoniker": "streamer\\Program.cs",
-              "ToolTip": "F:\\git\\strimer\\streamer\\Program.cs",
-              "RelativeToolTip": "streamer\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABWAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Audiolist.cs",
+              "DocumentMoniker": "D:\\DiZ\\git\\strimer\\streamer\\cs\\Audiolist.cs",
+              "RelativeDocumentMoniker": "streamer\\cs\\Audiolist.cs",
+              "ToolTip": "D:\\DiZ\\git\\strimer\\streamer\\cs\\Audiolist.cs",
+              "RelativeToolTip": "streamer\\cs\\Audiolist.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwDsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T07:54:02.682Z",
+              "WhenOpened": "2025-02-06T11:30:40.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.cs",
+              "DocumentMoniker": "D:\\DiZ\\git\\strimer\\streamer\\cs\\App.cs",
+              "RelativeDocumentMoniker": "streamer\\cs\\App.cs",
+              "ToolTip": "D:\\DiZ\\git\\strimer\\streamer\\cs\\App.cs",
+              "RelativeToolTip": "streamer\\cs\\App.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAiwH0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T10:28:52.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IceCast.cs",
+              "DocumentMoniker": "D:\\DiZ\\git\\strimer\\streamer\\cs\\IceCast.cs",
+              "RelativeDocumentMoniker": "streamer\\cs\\IceCast.cs",
+              "ToolTip": "D:\\DiZ\\git\\strimer\\streamer\\cs\\IceCast.cs",
+              "RelativeToolTip": "streamer\\cs\\IceCast.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAADgv6gAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T10:24:31.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DiZ\\git\\strimer\\streamer\\Program.cs",
+              "RelativeDocumentMoniker": "streamer\\Program.cs",
+              "ToolTip": "D:\\DiZ\\git\\strimer\\streamer\\Program.cs",
+              "RelativeToolTip": "streamer\\Program.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T10:24:08.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Radio.cs",
+              "DocumentMoniker": "D:\\DiZ\\git\\strimer\\streamer\\cs\\Radio.cs",
+              "RelativeDocumentMoniker": "streamer\\cs\\Radio.cs",
+              "ToolTip": "D:\\DiZ\\git\\strimer\\streamer\\cs\\Radio.cs",
+              "RelativeToolTip": "streamer\\cs\\Radio.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAiwBwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T10:08:41.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\DiZ\\git\\strimer\\streamer\\cs\\Player.cs",
+              "RelativeDocumentMoniker": "streamer\\cs\\Player.cs",
+              "ToolTip": "D:\\DiZ\\git\\strimer\\streamer\\cs\\Player.cs",
+              "RelativeToolTip": "streamer\\cs\\Player.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAmwHUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T10:08:17.861Z",
               "EditorCaption": ""
             }
           ]

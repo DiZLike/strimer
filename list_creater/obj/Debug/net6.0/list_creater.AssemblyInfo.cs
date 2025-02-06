@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("list_creater")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f42904cf5536bd0abf638d1bdb4b0ba05693059f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+805b4240f934e1f5df90d5657dd5f7d7e8940924")]
 [assembly: System.Reflection.AssemblyProductAttribute("list_creater")]
 [assembly: System.Reflection.AssemblyTitleAttribute("list_creater")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

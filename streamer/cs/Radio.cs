@@ -11,7 +11,7 @@ namespace streamer.cs
 {
     internal class Radio
     {
-		private Player _player = null!;
+        private Player _player = null!;
 		private Audiolist _playlist = null!;
 		private bool _radio_stop = false;
 
@@ -20,7 +20,8 @@ namespace streamer.cs
 			_player = new Player();
 			StartPlaylist();
 		}
-		private void StartPlaylist()
+
+        private void StartPlaylist()
 		{
 			Helper.Log("Load playlist");
 			string file = Helper.GetParam("radio.playlist");
@@ -32,11 +33,12 @@ namespace streamer.cs
 			{
 				if (_player.IsStoped)
 				{
-					bool cast_status = _player.Ice.NEW2_Cast_Init();
-                    Console.WriteLine($"Cast reconnect: {cast_status}");
-                    Helper.Log("Load track");
-					_player.StreamFree();
+					bool cast_error = _player.Ice.NEW2_Cast_Init();
+                    Console.WriteLine($"Cast error: {cast_error}");
+                    
 					tags = _player.PlayAudio(_playlist.GetRandomTrack());
+					if (tags == null)
+                        continue;
 					_player.SetTitle(tags.artist, tags.title);
 					track_time = _player.GetTrackTime();
 					string cons = $"Listeners: {_player.Listeners}\\{_player.PeakListeners}";
@@ -45,6 +47,7 @@ namespace streamer.cs
 					Console.WriteLine(cons);
 					Helper.Log(log);
 				}
+
 				string track_pos = _player.GetTrackPosition();
 				string console_message = $"Playing: {tags.artist} - {tags.title} [{_playlist.Current + 1}\\{_playlist.Count}; Time: {track_pos}\\{track_time}]";
 				Console.Write($"\r\t\t\t\t\t\t\t\t\t\t\t\t");
