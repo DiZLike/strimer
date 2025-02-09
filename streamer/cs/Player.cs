@@ -112,6 +112,9 @@ namespace streamer.cs
                 Helper.Log($"Stream ERROR! Message: {App.GetErrorMessage()}");
                 return null!;
             }
+            bool encoder_status = ice.Encoder.GetEncoderStatus();
+            if (!encoder_status)
+                ice.Encoder.RestartEncode();
             Helper.Log($"Track stream: {_stream}");
 
             ice.AddStream(_stream);

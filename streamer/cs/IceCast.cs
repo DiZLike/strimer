@@ -70,7 +70,7 @@ namespace streamer.cs
             Helper.Println("ice_successfully");
             Console.WriteLine($"Server: http://{_server}:{_port}/{_stream_link}");
 
-			_encoder.GetEncoderStatus();
+			//_encoder.GetEncoderStatus();
             
 			return cast_error;
         }

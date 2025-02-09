@@ -57,14 +57,30 @@ namespace strimer.cs.encoders
         }
 		public void SetTitle(string artist, string title)
 		{
+			// только opus
 			string text = $"--artist \"{artist}\" --title \"{title}\"";
 			string options = $"{exe} --bitrate {bitrate} --{bitrate_mode} --{content_type} --comp{complexity} --framesize {framesize} {text} - -";
 			bool ok = BassEnc_Opus.BASS_Encode_OPUS_NewStream(encoder_handle, options, BASSEncode.BASS_ENCODE_FP_16BIT);
 		}
-		public void GetEncoderStatus()
+		public bool GetEncoderStatus()
 		{
 			BASSActive status = BassEnc.BASS_Encode_IsActive(encoder_handle);
 			Helper.Log($"Encoder status: {status.ToString()}");
+			if (status == BASSActive.BASS_ACTIVE_PLAYING)
+				return true;
+			else return false;
+		}
+		public int NEW2_StartEncode()
+		{
+			// только opus
+			string options = $"{exe} --bitrate {bitrate} --{bitrate_mode} --{content_type} --comp{complexity} --framesize {framesize} - -";
+			encoder_handle = BassEnc_Opus.BASS_Encode_OPUS_Start(_mixer.main_mixer_handle, options, BASSEncode.BASS_ENCODE_FP_16BIT, null, IntPtr.Zero);
+			return encoder_handle;
+		}
+		public void RestartEncode()
+		{
+			int handle = NEW2_StartEncode();
+			Helper.Log($"Restart encoder handle: {handle.ToString()}");
 		}
 	}
 }

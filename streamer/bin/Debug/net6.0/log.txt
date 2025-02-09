@@ -147,3 +147,21 @@ Playing: stream - Electronic Super Joy _ Groove City - Ginseng [2\6; Listeners: 
 2025-02-06 19:24:56 > Is configured: True
 2025-02-06 19:24:56 > Load playlist
 2025-02-06 19:24:57 > Cast status: All is OK 
+2025-02-09 18:04:36 > Version: 0.2.3
+2025-02-09 18:04:36 > Is configured: True
+2025-02-09 18:04:36 > Load playlist
+2025-02-09 18:04:37 > Cast status: All is OK 
+2025-02-09 18:04:37 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-09 18:04:37 > Error: Invalid handle
+2025-02-09 18:04:37 > Load track: Axiom Verge Cover1.opus
+2025-02-09 18:04:37 > Track stream: -2147483642
+2025-02-09 18:04:42 > Playing: stream - Axiom Verge Cover1 [1\6; Listeners: 0\0]
+2025-02-09 18:16:25 > Version: 0.2.3
+2025-02-09 18:16:26 > Is configured: True
+2025-02-09 18:16:26 > Load playlist
+2025-02-09 18:16:27 > Cast status: All is OK 
+2025-02-09 18:16:27 > Error: Invalid handle
+2025-02-09 18:16:27 > Load track: Shovel Knight - An Underlying Problem.mp3
+2025-02-09 18:16:27 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-09 18:16:27 > Track stream: -2147483642
+2025-02-09 18:16:30 > Playing: stream - Shovel Knight - An Underlying Problem [6\6; Listeners: 0\0]

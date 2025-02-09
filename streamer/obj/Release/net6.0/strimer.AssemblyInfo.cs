@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("strimer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("0.2.3")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a796064c29ff14b37c1dc05157ed6e329afc6457")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("0.3.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4eb7e7711acf82876d366273a2def7dddf9179d")]
 [assembly: System.Reflection.AssemblyProductAttribute("strimer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("strimer")]
-[assembly: System.Reflection.AssemblyVersionAttribute("0.2.3")]
+[assembly: System.Reflection.AssemblyVersionAttribute("0.3.0")]
 
 // Создано классом WriteCodeFragment MSBuild.
 
