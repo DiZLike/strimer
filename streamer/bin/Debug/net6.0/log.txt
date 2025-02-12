@@ -165,3 +165,70 @@ Playing: stream - Electronic Super Joy _ Groove City - Ginseng [2\6; Listeners: 
 2025-02-09 18:16:27 > Encoder status: BASS_ACTIVE_PLAYING
 2025-02-09 18:16:27 > Track stream: -2147483642
 2025-02-09 18:16:30 > Playing: stream - Shovel Knight - An Underlying Problem [6\6; Listeners: 0\0]
+2025-02-12 15:19:13 > Version: 0.3.0
+2025-02-12 15:19:13 > Is configured: True
+2025-02-12 15:19:39 > Version: 0.3.0
+2025-02-12 15:19:40 > Is configured: True
+2025-02-12 15:30:00 > Version: 0.3.0
+2025-02-12 15:30:00 > Is configured: True
+2025-02-12 16:09:42 > Version: 0.3.0
+2025-02-12 16:09:42 > Is configured: True
+2025-02-12 16:10:13 > Version: 0.3.0
+2025-02-12 16:10:13 > Is configured: True
+2025-02-12 16:11:26 > Version: 0.3.0
+2025-02-12 16:11:26 > Is configured: True
+2025-02-12 16:11:55 > Version: 0.3.0
+2025-02-12 16:11:55 > Is configured: True
+2025-02-12 16:13:30 > Version: 0.3.0
+2025-02-12 16:13:30 > Is configured: True
+2025-02-12 16:19:26 > Version: 0.3.0
+2025-02-12 16:19:26 > Is configured: True
+2025-02-12 16:19:57 > Version: 0.3.0
+2025-02-12 16:19:57 > Is configured: True
+2025-02-12 16:20:27 > Version: 0.3.0
+2025-02-12 16:20:28 > Is configured: True
+2025-02-12 16:24:24 > Version: 0.3.0
+2025-02-12 16:24:24 > Is configured: True
+2025-02-12 16:24:43 > Version: 0.3.0
+2025-02-12 16:24:44 > Is configured: True
+2025-02-12 16:33:37 > Version: 0.3.0
+2025-02-12 16:33:38 > Is configured: True
+2025-02-12 16:33:38 > Load playlist
+2025-02-12 16:33:38 > Cast status: All is OK 
+2025-02-12 16:33:38 > Error: Invalid handle
+2025-02-12 16:33:38 > Load track: Golden Axe 3 - Ancient Mound (RA Cover).mp3
+2025-02-12 16:33:38 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-12 16:33:38 > Track stream: -2147483642
+2025-02-12 16:33:38 > Playing: stream - Golden Axe 3 - Ancient Mound (RA Cover) [3\6; Listeners: 0\0]
+2025-02-12 16:35:23 > Version: 0.3.0
+2025-02-12 16:35:23 > Is configured: True
+2025-02-12 16:35:24 > Load playlist
+2025-02-12 16:35:24 > Cast status: All is OK 
+2025-02-12 16:35:24 > Error: Invalid handle
+2025-02-12 16:35:24 > Load track: RΞMΛSTΞRΞD (V mike) - Batman - Laboratory Ruins.mp3
+2025-02-12 16:35:24 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-12 16:35:24 > Track stream: -2147483642
+2025-02-12 16:35:43 > Version: 0.3.0
+2025-02-12 16:35:43 > Is configured: True
+2025-02-12 16:35:43 > Load playlist
+2025-02-12 16:35:43 > Cast status: All is OK 
+2025-02-12 16:35:44 > Error: Invalid handle
+2025-02-12 16:35:44 > Load track: Golden Axe 3 - Ancient Mound (RA Cover).mp3
+2025-02-12 16:35:44 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-12 16:35:44 > Track stream: -2147483642
+2025-02-12 16:38:19 > Version: 0.3.0
+2025-02-12 16:38:19 > Is configured: True
+2025-02-12 16:38:20 > Load playlist
+2025-02-12 16:38:20 > Cast status: All is OK 
+2025-02-12 16:38:20 > Error: Invalid handle
+2025-02-12 16:38:20 > Load track: RΞMΛSTΞRΞD (V mike) - Batman - Laboratory Ruins.mp3
+2025-02-12 16:38:20 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-12 16:38:20 > Track stream: -2147483642
+2025-02-12 16:38:53 > Version: 0.3.0
+2025-02-12 16:38:53 > Is configured: True
+2025-02-12 16:38:53 > Load playlist
+2025-02-12 16:38:54 > Cast status: All is OK 
+2025-02-12 16:38:54 > Error: Invalid handle
+2025-02-12 16:38:54 > Load track: Golden Axe 3 - Ancient Mound (RA Cover).mp3
+2025-02-12 16:38:54 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-12 16:38:54 > Track stream: -2147483642

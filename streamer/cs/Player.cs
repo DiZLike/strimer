@@ -104,6 +104,12 @@ namespace streamer.cs
             ice.RemoveStream(_stream);
             StreamFree();
             Helper.Log($"Load track: {Path.GetFileName(file)}");
+            if (!File.Exists(file))
+            {
+                Console.WriteLine("No file!");
+                Helper.Log("No file!");
+                return null!;
+            }
             _stream = Bass.BASS_StreamCreateFile(file, 0, 0, BASSFlag.BASS_STREAM_DECODE);
             if (_stream == 0)
             {

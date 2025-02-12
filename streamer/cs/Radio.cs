@@ -11,18 +11,22 @@ namespace streamer.cs
 {
     internal class Radio
     {
+		private MySrv _mysrv = null!;
         private Player _player = null!;
 		private Audiolist _playlist = null!;
 		private bool _radio_stop = false;
 
 		public Radio()
 		{
-			_player = new Player();
+			_player = new ();
+			_mysrv = new();
 			StartPlaylist();
 		}
 
         private void StartPlaylist()
 		{
+			int debug = 0;
+
 			Helper.Log("Load playlist");
 			string file = Helper.GetParam("radio.playlist");
 			string track_time = String.Empty;
@@ -43,6 +47,7 @@ namespace streamer.cs
 					track_time = _player.GetTrackTime();
 					string cons = $"Listeners: {_player.Listeners}\\{_player.PeakListeners}";
 					string log = $"Playing: {tags.artist} - {tags.title} [{_playlist.Current + 1}\\{_playlist.Count}; Listeners: {_player.Listeners}\\{_player.PeakListeners}]";
+					_mysrv.Add_History(_playlist.Current + 1, tags.artist, tags.title);
 					Console.WriteLine();
 					Console.WriteLine(cons);
 					Helper.Log(log);
@@ -53,9 +58,16 @@ namespace streamer.cs
 				Console.Write($"\r\t\t\t\t\t\t\t\t\t\t\t\t");
 				Console.Write($"\r{console_message}");
 
+				if (debug > 60)
+				{
+                    Helper.Log($"Info: {console_message}");
+                    debug = 0;
+				}
+
+				debug++;
 				Thread.Sleep(1000);
 			}
-
-		}
+            Console.WriteLine("End WHILE");
+        }
 	}
 }

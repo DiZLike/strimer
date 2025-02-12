@@ -30,6 +30,7 @@ namespace streamer
             {
 				Helper.Log("Error: " + ex.Message);
 			}
+            Console.WriteLine("End Program");
         }
         private static void CheckArgs(string[] args)
         {
