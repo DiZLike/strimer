@@ -47,7 +47,7 @@ namespace streamer.cs
 					track_time = _player.GetTrackTime();
 					string cons = $"Listeners: {_player.Listeners}\\{_player.PeakListeners}";
 					string log = $"Playing: {tags.artist} - {tags.title} [{_playlist.Current + 1}\\{_playlist.Count}; Listeners: {_player.Listeners}\\{_player.PeakListeners}]";
-					_mysrv.Add_History(_playlist.Current + 1, tags.artist, tags.title);
+					//_mysrv.Add_History(_playlist.Current + 1, tags.artist, tags.title);
 					Console.WriteLine();
 					Console.WriteLine(cons);
 					Helper.Log(log);

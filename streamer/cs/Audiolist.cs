@@ -15,15 +15,18 @@ namespace strimer.cs
 		private string[] _playlist = null!;
 		private int _current_track = 0;
 		private List<string> _playback_history = new();
-		//private Random _random = null!;
+
+		private bool _save_history = false;
 
 		public int Count { get { return _playlist.Length; } }
 		public int Current { get { return _current_track; } }
 
 		public Audiolist(string file_tracklist)
 		{
-			//_random = new Random((int)DateTime.Now.Ticks);
 			this._file_playlist = file_tracklist;
+			_save_history = Helper.ToBoolFromWord(Helper.GetParam("radio.save_playlist_history"));
+			if (_save_history)
+				LoadHistoryFromFile();
 			CheckPlaylistFile(file_tracklist);
 			LoadPlaylist();
 		}
@@ -38,6 +41,8 @@ namespace strimer.cs
 			int index = Random.Shared.Next(0, available_tracks.Count);
 			_playback_history.Add(available_tracks[index]);
 			_current_track = _playlist.ToList().IndexOf(available_tracks[index]);
+			if (_save_history)
+				SaveHistoryToFile();
 			return available_tracks[index];
 		}
 		private void CheckPlaylistFile(string file_tracklist)
@@ -60,6 +65,27 @@ namespace strimer.cs
 				Helper.Println("er_playlist");
 				Environment.Exit(0xFF);
 			}
+		}
+		private void SaveHistoryToFile()
+		{
+			string file = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config", "history.pls");
+			File.WriteAllLines(file, _playback_history.ToArray());
+		}
+		private void LoadHistoryFromFile()
+		{
+			string file = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config", "history.pls");
+			if (!File.Exists(file))
+				return;
+			string[] hist = File.ReadAllLines(file);
+			foreach (var item in hist)
+			{
+				if (item == String.Empty)
+					continue;
+				_playback_history.Add(item);
+			}
+			string msg = $"History loaded";
+			Console.WriteLine(msg);
+			Helper.Log(msg);
 		}
 	}
 }

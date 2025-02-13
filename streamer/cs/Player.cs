@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Un4seen.Bass;
+using Un4seen.Bass.AddOn.Fx;
 using Un4seen.Bass.AddOn.Tags;
 
 namespace streamer.cs
@@ -30,6 +31,8 @@ namespace streamer.cs
         private readonly Mixer _mixer = null!;
         private int _stream = 0;
 
+        private bool _use_replace_gain = false;
+
         public bool IsPlaying { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_PLAYING; } }
 		public bool IsStoped { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_STOPPED; } }
 
@@ -49,6 +52,8 @@ namespace streamer.cs
             App.IsError();
             Helper.Println("is_init");
             Console.WriteLine();
+
+            _use_replace_gain = Helper.ToBoolFromWord(Helper.GetParam("radio.use_replay_gain"));
 
 			Plugins plugins = new();
 			ice = new(sample_rate);
@@ -124,15 +129,17 @@ namespace streamer.cs
             Helper.Log($"Track stream: {_stream}");
 
             ice.AddStream(_stream);
-            TAG_INFO tag_info = new TAG_INFO(file);
-            if (tag_info.artist.Length == 0)
+            TAG_INFO tag_info = new TAG_INFO();
+			tag_info = BassTags.BASS_TAG_GetFromFile(file);
+			if (tag_info.artist.Length == 0)
                 tag_info.artist = ice.StreamName;
             if (tag_info.title.Length == 0)
             {
                 string new_title = Path.GetFileNameWithoutExtension(file);
                 tag_info.title = new_title;
             }
-            return tag_info;
+            ReplaceGain(tag_info);
+			return tag_info;
 		}
         public string GetTrackPosition()
         {
@@ -162,5 +169,30 @@ namespace streamer.cs
 				App.IsError();
 			}
         }
+        private void ReplaceGain(TAG_INFO tag_info)
+        {
+			if (_use_replace_gain)
+			{
+				float gain = tag_info.replaygain_track_gain;
+                float volume = (float)Math.Pow(10, gain / 20);
+                bool ok = Bass.BASS_ChannelSetAttribute(_stream, BASSAttribute.BASS_ATTRIB_VOL, volume);
+                string msg = $"Replay Gain: {gain}; Volume set: {volume}";
+				Console.WriteLine(msg);
+				Helper.Log(msg);
+
+
+                // Limiter test
+                /*
+                int limiter_handle = Bass.BASS_ChannelSetFX(_stream, BASSFXType.BASS_FX_DX8_COMPRESSOR, 1);
+                BASS_DX8_COMPRESSOR limiter = new();
+                limiter.fAttack = 0.01f;
+                limiter.fGain = 8f;
+                limiter.fRatio = 100f;
+                limiter.fRelease = 150f;
+                limiter.fThreshold = 0f;
+                bool _ok = Bass.BASS_FXSetParameters(limiter_handle, limiter);
+                string d = App.GetErrorMessage();*/
+			}
+		}
 	}
 }

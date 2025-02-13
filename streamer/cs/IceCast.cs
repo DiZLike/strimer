@@ -80,7 +80,8 @@ namespace streamer.cs
 		}
 		public void RemoveStream(int stream)
 		{
-			_mixer.RemoveStream(stream);
+			if (stream != 0)
+				_mixer.RemoveStream(stream);
 		}
         private void SetServer()
         {

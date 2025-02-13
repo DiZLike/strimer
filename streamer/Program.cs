@@ -20,7 +20,7 @@ namespace streamer
                 CheckOS();
 				App.is_configured = Helper.GetParam("app.configured").ToBoolFromWord();
 				Helper.Log("Is configured: " + App.is_configured.ToString());
-				if (!App.is_configured)
+				//if (!App.is_configured)
 					ReplaceLib();
 				CheckArgs(args);
 
