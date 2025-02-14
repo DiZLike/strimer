@@ -13,6 +13,7 @@ namespace streamer
         public static readonly Version? Version = Reference.GetName().Version;
 		private static void Main(string[] args)
         {
+            new Test();
             try
             {
                 Console.WriteLine($"Version: {Version.Major}.{Version.Minor}.{Version.Build}");

@@ -138,6 +138,7 @@ namespace streamer.cs
                 string new_title = Path.GetFileNameWithoutExtension(file);
                 tag_info.title = new_title;
             }
+            Test(file);
             ReplaceGain(tag_info);
 			return tag_info;
 		}
@@ -173,26 +174,17 @@ namespace streamer.cs
         {
 			if (_use_replace_gain)
 			{
-				float gain = tag_info.replaygain_track_gain;
+                float gain = tag_info.replaygain_track_gain;
                 float volume = (float)Math.Pow(10, gain / 20);
                 bool ok = Bass.BASS_ChannelSetAttribute(_stream, BASSAttribute.BASS_ATTRIB_VOL, volume);
                 string msg = $"Replay Gain: {gain}; Volume set: {volume}";
 				Console.WriteLine(msg);
 				Helper.Log(msg);
-
-
-                // Limiter test
-                /*
-                int limiter_handle = Bass.BASS_ChannelSetFX(_stream, BASSFXType.BASS_FX_DX8_COMPRESSOR, 1);
-                BASS_DX8_COMPRESSOR limiter = new();
-                limiter.fAttack = 0.01f;
-                limiter.fGain = 8f;
-                limiter.fRatio = 100f;
-                limiter.fRelease = 150f;
-                limiter.fThreshold = 0f;
-                bool _ok = Bass.BASS_FXSetParameters(limiter_handle, limiter);
-                string d = App.GetErrorMessage();*/
 			}
 		}
+        private void Test(string file)
+        {
+            var tag = Bass.BASS_ChannelGetTagsOGG(_stream);
+        }
 	}
 }

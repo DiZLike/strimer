@@ -1070,3 +1070,146 @@ Playing: stream - Electronic Super Joy _ Groove City - Ginseng [2\6; Listeners: 
 2025-02-13 13:24:02 > Track stream: -2147483642
 2025-02-13 13:24:02 > Replay Gain: -9,86; Volume set: 0,32136607
 2025-02-13 13:24:05 > Playing: Art1 - Ttl4 [1\1; Listeners: 0\0]
+2025-02-13 20:21:39 > Version: 0.3.0
+2025-02-13 20:21:39 > Is configured: True
+2025-02-13 20:21:40 > Load playlist
+2025-02-13 20:27:24 > Version: 0.3.0
+2025-02-13 20:27:25 > Is configured: True
+2025-02-13 20:27:25 > Load playlist
+2025-02-13 20:27:25 > History loaded
+2025-02-13 20:27:25 > Cast status: All is OK 
+2025-02-13 20:27:25 > Load track: Axiom Verge Cover1.opus
+2025-02-13 20:27:25 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 20:27:25 > Track stream: -2147483642
+2025-02-13 20:32:39 > Version: 0.3.0
+2025-02-13 20:32:40 > Is configured: True
+2025-02-13 20:32:40 > Load playlist
+2025-02-13 20:32:40 > History loaded
+2025-02-13 20:32:40 > Cast status: All is OK 
+2025-02-13 20:32:40 > Load track: Axiom Verge Cover1.opus
+2025-02-13 20:32:40 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 20:32:40 > Track stream: -2147483642
+2025-02-13 20:41:09 > Version: 0.3.0
+2025-02-13 20:41:10 > Is configured: True
+2025-02-13 20:41:10 > Load playlist
+2025-02-13 20:41:10 > History loaded
+2025-02-13 20:41:10 > Cast status: All is OK 
+2025-02-13 20:41:10 > Load track: Axiom Verge Cover1.opus
+2025-02-13 20:41:10 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 20:41:10 > Track stream: -2147483642
+2025-02-13 20:58:33 > Version: 0.3.0
+2025-02-13 20:58:33 > Is configured: True
+2025-02-13 20:58:34 > Load playlist
+2025-02-13 20:58:34 > History loaded
+2025-02-13 20:58:34 > Cast status: All is OK 
+2025-02-13 20:58:34 > Load track: Axiom Verge Cover1.opus
+2025-02-13 20:58:34 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 20:58:34 > Track stream: -2147483642
+2025-02-13 20:59:48 > Version: 0.3.0
+2025-02-13 20:59:49 > Is configured: True
+2025-02-13 20:59:49 > Load playlist
+2025-02-13 20:59:49 > History loaded
+2025-02-13 20:59:50 > Cast status: All is OK 
+2025-02-13 20:59:50 > Load track: Axiom Verge Cover1.opus
+2025-02-13 20:59:50 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 20:59:50 > Track stream: -2147483642
+2025-02-13 21:01:09 > Version: 0.3.0
+2025-02-13 21:01:09 > Is configured: True
+2025-02-13 21:01:10 > Load playlist
+2025-02-13 21:01:10 > History loaded
+2025-02-13 21:01:10 > Cast status: All is OK 
+2025-02-13 21:01:10 > Load track: Axiom Verge Cover1.opus
+2025-02-13 21:01:10 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 21:01:10 > Track stream: -2147483642
+2025-02-13 21:03:51 > Version: 0.3.0
+2025-02-13 21:03:51 > Is configured: True
+2025-02-13 21:03:52 > Load playlist
+2025-02-13 21:03:52 > History loaded
+2025-02-13 21:03:52 > Cast status: All is OK 
+2025-02-13 21:03:52 > Load track: Axiom Verge Cover1.opus
+2025-02-13 21:03:52 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 21:03:52 > Track stream: -2147483642
+2025-02-13 21:06:27 > Version: 0.3.0
+2025-02-13 21:06:27 > Is configured: True
+2025-02-13 21:06:28 > Load playlist
+2025-02-13 21:06:28 > History loaded
+2025-02-13 21:06:28 > Cast status: All is OK 
+2025-02-13 21:06:28 > Load track: Axiom Verge Cover1.opus
+2025-02-13 21:06:28 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 21:06:28 > Track stream: -2147483642
+2025-02-13 21:10:39 > Version: 0.3.0
+2025-02-13 21:10:39 > Is configured: True
+2025-02-13 21:10:39 > Load playlist
+2025-02-13 21:10:39 > History loaded
+2025-02-13 21:10:39 > Cast status: All is OK 
+2025-02-13 21:10:39 > Load track: Axiom Verge Cover1.opus
+2025-02-13 21:10:39 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 21:10:39 > Track stream: -2147483642
+2025-02-13 21:11:42 > Version: 0.3.0
+2025-02-13 21:11:42 > Is configured: True
+2025-02-13 21:11:43 > Load playlist
+2025-02-13 21:11:43 > History loaded
+2025-02-13 21:11:43 > Cast status: All is OK 
+2025-02-13 21:11:43 > Load track: Axiom Verge Cover1.opus
+2025-02-13 21:11:43 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 21:11:43 > Track stream: -2147483642
+2025-02-13 21:13:49 > Version: 0.3.0
+2025-02-13 21:13:49 > Is configured: True
+2025-02-13 21:13:50 > Load playlist
+2025-02-13 21:13:50 > History loaded
+2025-02-13 21:13:50 > Cast status: All is OK 
+2025-02-13 21:13:50 > Load track: Axiom Verge Cover1.opus
+2025-02-13 21:13:50 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 21:13:50 > Track stream: -2147483642
+2025-02-13 21:20:01 > Version: 0.3.0
+2025-02-13 21:20:02 > Is configured: True
+2025-02-13 21:20:02 > Load playlist
+2025-02-13 21:20:02 > History loaded
+2025-02-13 21:20:02 > Cast status: All is OK 
+2025-02-13 21:20:02 > Load track: Axiom Verge Cover1.opus
+2025-02-13 21:20:02 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 21:20:02 > Track stream: -2147483642
+2025-02-13 21:21:28 > Version: 0.3.0
+2025-02-13 21:21:28 > Is configured: True
+2025-02-13 21:21:29 > Load playlist
+2025-02-13 21:21:29 > History loaded
+2025-02-13 21:21:29 > Cast status: All is OK 
+2025-02-13 21:21:29 > Load track: Axiom Verge Cover1.opus
+2025-02-13 21:21:29 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 21:21:29 > Track stream: -2147483642
+2025-02-13 21:24:06 > Version: 0.3.0
+2025-02-13 21:24:06 > Is configured: True
+2025-02-13 21:24:07 > Load playlist
+2025-02-13 21:24:07 > History loaded
+2025-02-13 21:24:07 > Cast status: All is OK 
+2025-02-13 21:24:07 > Load track: Axiom Verge Cover1.opus
+2025-02-13 21:24:07 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 21:24:07 > Track stream: -2147483642
+2025-02-13 21:26:31 > Version: 0.3.0
+2025-02-13 21:26:31 > Is configured: True
+2025-02-13 21:26:35 > Version: 0.3.0
+2025-02-13 21:26:36 > Is configured: True
+2025-02-13 21:26:36 > Load playlist
+2025-02-13 21:26:36 > History loaded
+2025-02-13 21:26:36 > Cast status: All is OK 
+2025-02-13 21:26:36 > Load track: Axiom Verge Cover1.opus
+2025-02-13 21:26:36 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 21:26:36 > Track stream: -2147483642
+2025-02-13 21:30:34 > Version: 0.3.0
+2025-02-13 21:30:34 > Is configured: True
+2025-02-13 21:30:34 > Load playlist
+2025-02-13 21:30:34 > History loaded
+2025-02-13 21:30:34 > Cast status: All is OK 
+2025-02-13 21:30:34 > Load track: Axiom Verge Cover1.opus
+2025-02-13 21:30:34 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 21:30:34 > Track stream: -2147483642
+2025-02-13 21:57:49 > Version: 0.3.0
+2025-02-13 21:57:49 > Is configured: True
+2025-02-13 21:57:50 > Load playlist
+2025-02-13 21:57:50 > History loaded
+2025-02-13 21:57:50 > Cast status: All is OK 
+2025-02-13 21:57:50 > Load track: Axiom Verge Cover1.opus
+2025-02-13 21:57:50 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-13 21:57:50 > Track stream: -2147483640
+2025-02-13 21:57:51 > Replay Gain: -100; Volume set: 1E-05
+2025-02-13 21:57:51 > Playing: qweqewqeqwe - Axiom Verge Cover [1\1; Listeners: 0\0]

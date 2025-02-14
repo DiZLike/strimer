@@ -24,6 +24,9 @@
     <Reference Include="Bass.Net">
       <HintPath>Bass.Net.dll</HintPath>
     </Reference>
+    <Reference Include="TagLib">
+      <HintPath>TagLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
