@@ -381,3 +381,4 @@ D:\DiZ\git\strimer\streamer\bin\Debug\net6.0\bass_dll\win\x64\tags.dll
 D:\DiZ\git\strimer\streamer\bin\Debug\net6.0\bass_dll\win\x86\bass_fx.dll
 D:\DiZ\git\strimer\streamer\bin\Debug\net6.0\bass_dll\win\x86\tags.dll
 D:\DiZ\git\strimer\streamer\bin\Debug\net6.0\TagLib.dll
+D:\Evgeny\git\strimer\streamer\bin\Debug\net6.0\TagLib.dll

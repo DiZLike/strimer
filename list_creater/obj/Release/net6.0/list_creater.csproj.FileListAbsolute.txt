@@ -33,6 +33,11 @@ D:\Evgeny\git\strimer\list_creater\bin\Release\net6.0\list_creater.deps.json
 D:\Evgeny\git\strimer\list_creater\bin\Release\net6.0\list_creater.runtimeconfig.json
 D:\Evgeny\git\strimer\list_creater\bin\Release\net6.0\list_creater.dll
 D:\Evgeny\git\strimer\list_creater\bin\Release\net6.0\list_creater.pdb
+D:\Evgeny\git\strimer\streamer\bin\Release\net6.0\list_creater.exe
+D:\Evgeny\git\strimer\streamer\bin\Release\net6.0\list_creater.deps.json
+D:\Evgeny\git\strimer\streamer\bin\Release\net6.0\list_creater.runtimeconfig.json
+D:\Evgeny\git\strimer\streamer\bin\Release\net6.0\list_creater.dll
+D:\Evgeny\git\strimer\streamer\bin\Release\net6.0\list_creater.pdb
 D:\Evgeny\git\strimer\list_creater\obj\Release\net6.0\list_creater.GeneratedMSBuildEditorConfig.editorconfig
 D:\Evgeny\git\strimer\list_creater\obj\Release\net6.0\list_creater.AssemblyInfoInputs.cache
 D:\Evgeny\git\strimer\list_creater\obj\Release\net6.0\list_creater.AssemblyInfo.cs
