@@ -1213,3 +1213,14 @@ Playing: stream - Electronic Super Joy _ Groove City - Ginseng [2\6; Listeners: 
 2025-02-13 21:57:50 > Track stream: -2147483640
 2025-02-13 21:57:51 > Replay Gain: -100; Volume set: 1E-05
 2025-02-13 21:57:51 > Playing: qweqewqeqwe - Axiom Verge Cover [1\1; Listeners: 0\0]
+2025-02-16 16:19:28 > Version: 0.3.0
+2025-02-16 16:19:28 > Is configured: True
+2025-02-16 16:23:07 > Version: 0.3.0
+2025-02-16 16:23:08 > Is configured: True
+2025-02-16 16:23:08 > Load playlist
+2025-02-16 16:23:08 > History loaded
+2025-02-16 16:23:11 > Cast status: Can't open the file
+2025-02-16 16:23:11 > Load track: Axiom Verge Cover1.opus
+2025-02-16 16:23:11 > Encoder status: BASS_ACTIVE_PLAYING
+2025-02-16 16:23:11 > Track stream: -2147483642
+2025-02-16 16:23:11 > Replay Gain: -100; Volume set: 1E-05

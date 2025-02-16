@@ -18,7 +18,6 @@ namespace streamer.cs
 		public int Listeners { get => GetListeners(); }
 		public int PeakListeners { get => GetPeakListeners(); }
         public Enc Encoder { get => _encoder; set => _encoder = value; }
-
         private string? _server;
         private string? _port;
         private string? _stream_link;
@@ -45,33 +44,21 @@ namespace streamer.cs
             SetEncoder();
             Helper.SetParam("app.configured", "yes");
             Helper.SaveParam("strimer");
-
-			//NEW2_Cast_Init();
-			
-			
 			Helper.Println("b_started");
 			App.IsError();
 		}
-
 		public bool NEW2_Cast_Init()
 		{
 			bool cast_error = false;
-
             string url = $"http://{_server}:{_port}/{_stream_link}";
 			App.is_error = cast_error = !BassEnc.BASS_Encode_CastInit(_encoder.Encoder_handle, url, $"{_username}:{_password}",
 				_encoder.Content, _stream_name, null, _stream_genre, null, null, _encoder.Bitrate,
 				BASSEncodeCast.BASS_ENCODE_CAST_PUT);
-
 			Console.WriteLine($"Cast status: {App.GetErrorMessage()}");
 			Helper.Log($"Cast status: {App.GetErrorMessage()}");
-
             App.is_error = !Bass.BASS_ChannelPlay(_mixer.main_mixer_handle, true);
-
             Helper.Println("ice_successfully");
             Console.WriteLine($"Server: http://{_server}:{_port}/{_stream_link}");
-
-			//_encoder.GetEncoderStatus();
-            
 			return cast_error;
         }
         public void AddStream(int stream)
@@ -165,7 +152,6 @@ namespace streamer.cs
 			}
 			else
 				_encoder_ind = Helper.GetParam("icecast.encoder").ToInt();
-
             if (_encoder_ind == 0) // Opus
                 _encoder = new EncOpus(_mixer);
         }

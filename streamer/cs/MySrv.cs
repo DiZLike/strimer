@@ -21,6 +21,8 @@ namespace strimer.cs
         private string _add_song_info_number_var = String.Empty;
         private string _add_song_info_title_var = String.Empty;
         private string _add_song_info_artist_var = String.Empty;
+        private string _add_song_info_link_var = String.Empty;
+        private string _add_song_info_link_folder_on_server = String.Empty;
         public MySrv()
         {
             LoadConf();
@@ -40,25 +42,25 @@ namespace strimer.cs
             _add_song_info_number_var = Helper.GetParam("mysrv.add_song_info_number_var");
             _add_song_info_title_var = Helper.GetParam("mysrv.add_song_info_title_var");
             _add_song_info_artist_var = Helper.GetParam("mysrv.add_song_info_artist_var");
-
+            _add_song_info_link_var = Helper.GetParam("mysrv.add_song_info_link_var");
+            _add_song_info_link_folder_on_server = Helper.GetParam("mysrv.add_song_info_link_folder_on_server");
         }
-        public void Add_History(int number, string artist, string title)
+        public void Add_History(int number, string artist, string title, string filename)
         {
-            SendData(_add_song_info_page, $"key={_key}",
-                $"{_add_song_info_number_var}={number}", 
-                $"{_add_song_info_artist_var}={artist}", 
-                $"{_add_song_info_title_var}={title}");
+            SendData(_add_song_info_page, $"{_key_var}={_key}",
+                $"{_add_song_info_number_var}={number}",
+                $"{_add_song_info_artist_var}={artist}",
+                $"{_add_song_info_title_var}={title}",
+                $"{_add_song_info_link_var}={_add_song_info_link_folder_on_server}{filename}");
         }
         private void SendData(string page, string key, params string[] par)
         {
             if (!_enable)
                 return;
-
             HttpClient client = new();
             string url = $"{_srv_url}:{_port}/{page}?{key}";
             foreach (var param in par)
                 url += $"&{param}";
-
             HttpResponseMessage response = UseGET(client, url);
             if (response.IsSuccessStatusCode)
             {

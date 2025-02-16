@@ -30,12 +30,9 @@ namespace streamer.cs
         private readonly IceCast ice = null!;
         private readonly Mixer _mixer = null!;
         private int _stream = 0;
-
         private bool _use_replace_gain = false;
-
         public bool IsPlaying { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_PLAYING; } }
 		public bool IsStoped { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_STOPPED; } }
-
         public Player()
         {
             if (!App.is_configured)
@@ -52,9 +49,7 @@ namespace streamer.cs
             App.IsError();
             Helper.Println("is_init");
             Console.WriteLine();
-
             _use_replace_gain = Helper.ToBoolFromWord(Helper.GetParam("radio.use_replay_gain"));
-
 			Plugins plugins = new();
 			ice = new(sample_rate);
         }
@@ -104,16 +99,13 @@ namespace streamer.cs
             Helper.SetParam("device.frequency", frequency[freq].ToString()); // сохранение частоты
             return frequency[freq];
         }
-        public TAG_INFO PlayAudio(string file)
+        private bool CheckAudioFile(string file)
         {
-            ice.RemoveStream(_stream);
-            StreamFree();
-            Helper.Log($"Load track: {Path.GetFileName(file)}");
             if (!File.Exists(file))
             {
                 Console.WriteLine("No file!");
                 Helper.Log("No file!");
-                return null!;
+                return false!;
             }
             _stream = Bass.BASS_StreamCreateFile(file, 0, 0, BASSFlag.BASS_STREAM_DECODE);
             if (_stream == 0)
@@ -121,27 +113,44 @@ namespace streamer.cs
                 Helper.Log($"Stream ERROR! File: {Path.GetFileName(file)}");
                 Console.WriteLine($"Stream ERROR! Message: {App.GetErrorMessage()}");
                 Helper.Log($"Stream ERROR! Message: {App.GetErrorMessage()}");
-                return null!;
+                return false!;
             }
+            return true;
+        }
+        private void CheckEncodeStatus()
+        {
             bool encoder_status = ice.Encoder.GetEncoderStatus();
             if (!encoder_status)
                 ice.Encoder.RestartEncode();
-            Helper.Log($"Track stream: {_stream}");
-
+        }
+        public TAG_INFO PlayAudio(string file)
+        {
+            ice.RemoveStream(_stream);
+            StreamFree();
+            Helper.Log($"Load track: {Path.GetFileName(file)}");
+            if (!CheckAudioFile(file))
+                return null!;
+            CheckEncodeStatus();
             ice.AddStream(_stream);
+            Helper.Log($"Track stream: {_stream}");
+            TAG_INFO tag_info = GetTags(file);
+            ReplayGain gain = new(_use_replace_gain, tag_info, _stream);
+            gain.ApplyGainToVolume();
+			return tag_info;
+		}
+        private TAG_INFO GetTags(string file)
+        {
             TAG_INFO tag_info = new TAG_INFO();
-			tag_info = BassTags.BASS_TAG_GetFromFile(file);
-			if (tag_info.artist.Length == 0)
+            tag_info = BassTags.BASS_TAG_GetFromFile(file);
+            if (tag_info.artist.Length == 0)
                 tag_info.artist = ice.StreamName;
             if (tag_info.title.Length == 0)
             {
                 string new_title = Path.GetFileNameWithoutExtension(file);
                 tag_info.title = new_title;
             }
-            Test(file);
-            ReplaceGain(tag_info);
-			return tag_info;
-		}
+            return tag_info;
+        }
         public string GetTrackPosition()
         {
             long raw_pos = Bass.BASS_ChannelGetPosition(_stream);
@@ -170,18 +179,6 @@ namespace streamer.cs
 				App.IsError();
 			}
         }
-        private void ReplaceGain(TAG_INFO tag_info)
-        {
-			if (_use_replace_gain)
-			{
-                float gain = tag_info.replaygain_track_gain;
-                float volume = (float)Math.Pow(10, gain / 20);
-                bool ok = Bass.BASS_ChannelSetAttribute(_stream, BASSAttribute.BASS_ATTRIB_VOL, volume);
-                string msg = $"Replay Gain: {gain}; Volume set: {volume}";
-				Console.WriteLine(msg);
-				Helper.Log(msg);
-			}
-		}
         private void Test(string file)
         {
             var tag = Bass.BASS_ChannelGetTagsOGG(_stream);

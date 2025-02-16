@@ -15,14 +15,12 @@ namespace streamer.cs
         private Player _player = null!;
 		private Audiolist _playlist = null!;
 		private bool _radio_stop = false;
-
 		public Radio()
 		{
 			_player = new ();
 			_mysrv = new();
 			StartPlaylist();
 		}
-
         private void StartPlaylist()
 		{
 			int debug = 0;
@@ -39,15 +37,16 @@ namespace streamer.cs
 				{
 					bool cast_error = _player.Ice.NEW2_Cast_Init();
                     Console.WriteLine($"Cast error: {cast_error}");
-                    
-					tags = _player.PlayAudio(_playlist.GetRandomTrack());
+
+					string audio_file = _playlist.GetRandomTrack();
+                    tags = _player.PlayAudio(audio_file);
 					if (tags == null)
                         continue;
 					_player.SetTitle(tags.artist, tags.title);
 					track_time = _player.GetTrackTime();
 					string cons = $"Listeners: {_player.Listeners}\\{_player.PeakListeners}";
 					string log = $"Playing: {tags.artist} - {tags.title} [{_playlist.Current + 1}\\{_playlist.Count}; Listeners: {_player.Listeners}\\{_player.PeakListeners}]";
-					//_mysrv.Add_History(_playlist.Current + 1, tags.artist, tags.title);
+					_mysrv.Add_History(_playlist.Current + 1, tags.artist, tags.title, Path.GetFileName(audio_file));
 					Console.WriteLine();
 					Console.WriteLine(cons);
 					Helper.Log(log);

@@ -15,12 +15,9 @@ namespace strimer.cs
 		private string[] _playlist = null!;
 		private int _current_track = 0;
 		private List<string> _playback_history = new();
-
 		private bool _save_history = false;
-
 		public int Count { get { return _playlist.Length; } }
 		public int Current { get { return _current_track; } }
-
 		public Audiolist(string file_tracklist)
 		{
 			this._file_playlist = file_tracklist;

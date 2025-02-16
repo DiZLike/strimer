@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Evgeny\\git\\strimer\\gainer\\gainer.csproj": {}
+    "D:\\DiZ\\git\\strimer\\gainer\\gainer.csproj": {}
   },
   "projects": {
-    "D:\\Evgeny\\git\\strimer\\gainer\\gainer.csproj": {
+    "D:\\DiZ\\git\\strimer\\gainer\\gainer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Evgeny\\git\\strimer\\gainer\\gainer.csproj",
+        "projectUniqueName": "D:\\DiZ\\git\\strimer\\gainer\\gainer.csproj",
         "projectName": "gainer",
-        "projectPath": "D:\\Evgeny\\git\\strimer\\gainer\\gainer.csproj",
+        "projectPath": "D:\\DiZ\\git\\strimer\\gainer\\gainer.csproj",
         "packagesPath": "C:\\Users\\Evgeny\\.nuget\\packages\\",
-        "outputPath": "D:\\Evgeny\\git\\strimer\\gainer\\obj\\",
+        "outputPath": "D:\\DiZ\\git\\strimer\\gainer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\Evgeny\\AppData\\Roaming\\NuGet\\NuGet.Config",
