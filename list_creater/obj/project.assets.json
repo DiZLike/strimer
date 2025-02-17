@@ -9,19 +9,19 @@
   },
   "packageFolders": {
     "C:\\Users\\Evgeny\\.nuget\\packages\\": {},
-    "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DiZ\\git\\strimer\\list_creater\\list_creater.csproj",
+      "projectUniqueName": "D:\\Evgeny\\git\\strimer\\list_creater\\list_creater.csproj",
       "projectName": "list_creater",
-      "projectPath": "D:\\DiZ\\git\\strimer\\list_creater\\list_creater.csproj",
+      "projectPath": "D:\\Evgeny\\git\\strimer\\list_creater\\list_creater.csproj",
       "packagesPath": "C:\\Users\\Evgeny\\.nuget\\packages\\",
-      "outputPath": "D:\\DiZ\\git\\strimer\\list_creater\\obj\\",
+      "outputPath": "D:\\Evgeny\\git\\strimer\\list_creater\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\Evgeny\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -51,7 +51,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net6.0": {
@@ -72,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
