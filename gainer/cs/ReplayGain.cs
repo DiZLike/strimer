@@ -44,17 +44,21 @@ namespace gainer.cs
 		{
 			int blockSize = sampleRate * 400 / 1000;
 			int numBlock = pcm_data32.Length / blockSize;
+			int cor_numBlock = 0;
 			double sumLoudness = 0;
 			for (int i = 0; i < numBlock; i++)
 			{
-				Console.Write($"\r\tCalculating LUFS [blok]:\t{i + 1}");
+				Console.Write($"\r\tCalculating LUFS [bloсk]:\t{i + 1}");
 				float[] block = new ArraySegment<float>(pcm_data32, i * blockSize, blockSize).ToArray();
 				double rms = CalculateRMS(block);
 				double momentaryLoudness = -0.691 + 20 * Math.Log10(rms);
-				sumLoudness += Math.Pow(10, momentaryLoudness / 10);
+				if (momentaryLoudness <= -120)
+					cor_numBlock++;
+				else
+					sumLoudness += Math.Pow(10, momentaryLoudness / 10);
 			}
 			Console.WriteLine();
-			double integratedLoudness = -0.691 + 10 * Math.Log10(sumLoudness / numBlock);
+			double integratedLoudness = -0.691 + 10 * Math.Log10(sumLoudness / (numBlock - cor_numBlock));
 			return integratedLoudness;
 		}
 

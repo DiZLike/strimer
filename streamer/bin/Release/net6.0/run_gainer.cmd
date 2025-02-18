@@ -1,1 +1,1 @@
-gainer -gain k -tag n -target -18 "C:\Users\Evgeny\Desktop\pls"
+gainer -gain n -tag n -target -23 "C:\Users\Evgeny\Desktop\new"

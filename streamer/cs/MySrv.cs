@@ -49,8 +49,8 @@ namespace strimer.cs
         {
             SendData(_add_song_info_page, $"{_key_var}={_key}",
                 $"{_add_song_info_number_var}={number}",
-                $"{_add_song_info_artist_var}={artist}",
-                $"{_add_song_info_title_var}={title}",
+                $"{_add_song_info_artist_var}={Uri.EscapeDataString(artist)}",
+                $"{_add_song_info_title_var}={Uri.EscapeDataString(title)}",
                 $"{_add_song_info_link_var}={_add_song_info_link_folder_on_server}{filename}");
         }
         private void SendData(string page, string key, params string[] par)

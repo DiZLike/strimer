@@ -8,4 +8,10 @@
     <BaseOutputPath>..\streamer\bin</BaseOutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="TagLib">
+      <HintPath>..\streamer\TagLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

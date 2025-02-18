@@ -31,7 +31,8 @@ namespace streamer.cs
         private readonly Mixer _mixer = null!;
         private int _stream = 0;
         private bool _use_replace_gain = false;
-        public bool IsPlaying { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_PLAYING; } }
+		private bool _use_custom_gain = false;
+		public bool IsPlaying { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_PLAYING; } }
 		public bool IsStoped { get { return Bass.BASS_ChannelIsActive(_stream) == BASSActive.BASS_ACTIVE_STOPPED; } }
         public Player()
         {
@@ -50,6 +51,7 @@ namespace streamer.cs
             Helper.Println("is_init");
             Console.WriteLine();
             _use_replace_gain = Helper.ToBoolFromWord(Helper.GetParam("radio.use_replay_gain"));
+			_use_custom_gain = Helper.ToBoolFromWord(Helper.GetParam("radio.use_custom_gain"));
 			Plugins plugins = new();
 			ice = new(sample_rate);
         }
@@ -134,7 +136,7 @@ namespace streamer.cs
             ice.AddStream(_stream);
             Helper.Log($"Track stream: {_stream}");
             TAG_INFO tag_info = GetTags(file);
-            ReplayGain gain = new(_use_replace_gain, tag_info, _stream);
+            ReplayGain gain = new(_use_replace_gain, _use_custom_gain, tag_info, _stream);
             gain.ApplyGainToVolume();
 			return tag_info;
 		}

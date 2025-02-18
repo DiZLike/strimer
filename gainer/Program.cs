@@ -12,8 +12,8 @@ namespace gainer
 
 		// gainer -gain n/k -tag n/c -target -23 folder
 		static void Main(string[] args)
-		{
-			/*// -------------------------------------------------------------
+		{/*
+			// -------------------------------------------------------------
 			args = new string[7];
 			args[0] = "-gain";
 			args[1] = "k";
@@ -21,7 +21,7 @@ namespace gainer
 			args[3] = "n";
 			args[4] = "-target";
 			args[5] = "-18";
-			args[6] = "C:\\Users\\Evgeny\\Desktop\\pls\\";
+			args[6] = "C:\\Users\\Evgeny\\Desktop\\new";
 			// -------------------------------------------------------------*/
 			if (args.Length < 7)
 				return;

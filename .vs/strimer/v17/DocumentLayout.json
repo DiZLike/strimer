@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\evgeny\\git\\strimer\\streamer\\cs\\replaygain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\replaygain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\evgeny\\git\\strimer\\streamer\\cs\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\cs\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|d:\\evgeny\\git\\strimer\\streamer\\config\\strimer.conf||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{F817AED8-77DB-4A1D-8833-E563E584717E}|streamer\\strimer.csproj|solutionrelative:streamer\\config\\strimer.conf||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\Player.cs",
+              "RelativeDocumentMoniker": "streamer\\cs\\Player.cs",
+              "ToolTip": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\Player.cs",
+              "RelativeToolTip": "streamer\\cs\\Player.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAwDYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T21:09:27.892Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,10 +44,22 @@
               "RelativeDocumentMoniker": "streamer\\cs\\ReplayGain.cs",
               "ToolTip": "D:\\Evgeny\\git\\strimer\\streamer\\cs\\ReplayGain.cs",
               "RelativeToolTip": "streamer\\cs\\ReplayGain.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAqwCoAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T07:08:22.575Z",
+              "WhenOpened": "2025-02-18T21:07:48.604Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "strimer.conf",
+              "DocumentMoniker": "D:\\Evgeny\\git\\strimer\\streamer\\config\\strimer.conf",
+              "RelativeDocumentMoniker": "streamer\\config\\strimer.conf",
+              "ToolTip": "D:\\Evgeny\\git\\strimer\\streamer\\config\\strimer.conf",
+              "RelativeToolTip": "streamer\\config\\strimer.conf",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-02-18T20:56:25.394Z"
             }
           ]
         }
