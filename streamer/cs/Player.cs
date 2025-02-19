@@ -12,9 +12,9 @@ namespace streamer.cs
 {
     internal class Player
     {
-        public IceCast Ice => ice;
-        public int Listeners { get => ice.Listeners; }
-		public int PeakListeners { get => ice.PeakListeners; }
+        public IceCast Ice => _ice;
+        public int Listeners { get => _ice.Listeners; }
+		public int PeakListeners { get => _ice.PeakListeners; }
 
 		private readonly List<int> frequency = new()
         {
@@ -27,8 +27,9 @@ namespace streamer.cs
         };
         private readonly int dev;
 		private readonly int sample_rate = 44100;
-        private readonly IceCast ice = null!;
+        private readonly IceCast _ice = null!;
         private readonly Mixer _mixer = null!;
+        private readonly ReplayGain _gain = null!;
         private int _stream = 0;
         private bool _use_replace_gain = false;
 		private bool _use_custom_gain = false;
@@ -47,13 +48,15 @@ namespace streamer.cs
 				sample_rate = Helper.GetParam("device.frequency").ToInt();
 			}
             App.is_error = !Bass.BASS_Init(dev, sample_rate, BASSInit.BASS_DEVICE_DEFAULT, IntPtr.Zero);
+            BassFx.BASS_FX_GetVersion();
             App.IsError();
             Helper.Println("is_init");
             Console.WriteLine();
             _use_replace_gain = Helper.ToBoolFromWord(Helper.GetParam("radio.use_replay_gain"));
 			_use_custom_gain = Helper.ToBoolFromWord(Helper.GetParam("radio.use_custom_gain"));
 			Plugins plugins = new();
-			ice = new(sample_rate);
+			_ice = new(sample_rate);
+            _gain = new(_use_replace_gain, _use_custom_gain, _ice.Mixer.main_mixer_handle);
         }
         private int SetAudioDevice()
         {
@@ -121,31 +124,31 @@ namespace streamer.cs
         }
         private void CheckEncodeStatus()
         {
-            bool encoder_status = ice.Encoder.GetEncoderStatus();
+            bool encoder_status = _ice.Encoder.GetEncoderStatus();
             if (!encoder_status)
-                ice.Encoder.RestartEncode();
+                _ice.Encoder.RestartEncode();
         }
         public TAG_INFO PlayAudio(string file)
         {
-            ice.RemoveStream(_stream);
+            _ice.RemoveStream(_stream);
             StreamFree();
             Helper.Log($"Load track: {Path.GetFileName(file)}");
             if (!CheckAudioFile(file))
                 return null!;
             CheckEncodeStatus();
-            ice.AddStream(_stream);
             Helper.Log($"Track stream: {_stream}");
             TAG_INFO tag_info = GetTags(file);
-            ReplayGain gain = new(_use_replace_gain, _use_custom_gain, tag_info, _stream);
-            gain.ApplyGainToVolume();
-			return tag_info;
+            _gain.SetGain(tag_info);
+            _gain.ApplyGain();
+            _ice.AddStream(_stream);
+            return tag_info;
 		}
         private TAG_INFO GetTags(string file)
         {
             TAG_INFO tag_info = new TAG_INFO();
             tag_info = BassTags.BASS_TAG_GetFromFile(file);
             if (tag_info.artist.Length == 0)
-                tag_info.artist = ice.StreamName;
+                tag_info.artist = _ice.StreamName;
             if (tag_info.title.Length == 0)
             {
                 string new_title = Path.GetFileNameWithoutExtension(file);
@@ -171,7 +174,7 @@ namespace streamer.cs
 		}
         public void SetTitle(string artist, string title)
         {
-            ice.SetTitle(artist, title);
+            _ice.SetTitle(artist, title);
         }
         public void StreamFree()
         {

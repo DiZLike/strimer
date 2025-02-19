@@ -18,6 +18,8 @@ namespace streamer.cs
 		public int Listeners { get => GetListeners(); }
 		public int PeakListeners { get => GetPeakListeners(); }
         public Enc Encoder { get => _encoder; set => _encoder = value; }
+        internal Mixer Mixer { get => _mixer; set => _mixer = value; }
+
         private string? _server;
         private string? _port;
         private string? _stream_link;

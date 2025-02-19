@@ -15,34 +15,55 @@ namespace strimer.cs
     {
         private bool _use_replace_gain = false;
 		private bool _use_custom_gain = false;
-		private TAG_INFO _tag_info;
-        private int _stream = 0;
-        public ReplayGain(bool use_replace_gain, bool _use_custom_gain, TAG_INFO tag_info, int stream)
+        private TAG_INFO _tag_info = null!;
+        private int _mixer = 0;
+        private int _fx_gain_handle = 0;
+        private int _fx_limiter_handle = 0;
+        private BASS_BFX_COMPRESSOR2 _gain;
+        private BASS_BFX_COMPRESSOR2 _limiter;
+        public ReplayGain(bool use_replace_gain, bool use_custom_gain, int mixer)
         {
             _use_replace_gain = use_replace_gain;
+            _mixer = mixer;
+            CreateGainControl();
+            CreateLimiter();
+        }
+        public void SetGain(TAG_INFO tag_info)
+        {
             _tag_info = tag_info;
-            _stream = stream;
         }
-        public void ApplyGainToVolume()
+        public void ApplyGain()
         {
-            if (_use_replace_gain)
-            {
-                test();
-                float gain = _tag_info.replaygain_track_gain;
-                float volume = (float)Math.Pow(10, gain / 20);
-                bool ok = Bass.BASS_ChannelSetAttribute(_stream, BASSAttribute.BASS_ATTRIB_VOL, volume);
-                string msg = $"Replay Gain: {gain}; Volume set: {volume}";
-                Console.WriteLine(msg);
-                Helper.Log(msg);
-            }
-        }
-        public void test()
-        {
-            int fx = Bass.BASS_ChannelSetFX(_stream, BASSFXType.BASS_FX_BFX_COMPRESSOR2, 0);
-            BASS_BFX_COMPRESSOR2 comp = new BASS_BFX_COMPRESSOR2();
-            int i = BassFx.BASS_FX_GetVersion();
+            _gain.fAttack = 0.01f;
+            _gain.fRatio = 100;
+            _gain.fThreshold = 0;
+            _gain.fRelease = 250;
+            _gain.fGain = _tag_info.replaygain_track_gain;
+            Bass.BASS_FXSetParameters(_fx_gain_handle, _gain);
+            string error = App.GetErrorMessage();
 
-			string error = App.GetErrorMessage();
+            //ApplyLimiter();
+        }
+        public void ApplyLimiter()
+        {
+            _limiter.fAttack = 0.01f;
+            _limiter.fRelease = 200;
+            _limiter.fGain = 5;
+            _limiter.fRatio = 100;
+            _limiter.fThreshold = -15;
+            Bass.BASS_FXSetParameters(_fx_limiter_handle, _limiter);
+
+            string error = App.GetErrorMessage();
+        }
+        private void CreateGainControl()
+        {
+            _fx_gain_handle = Bass.BASS_ChannelSetFX(_mixer, BASSFXType.BASS_FX_BFX_COMPRESSOR2, 2);
+            _gain = new();
+        }
+        private void CreateLimiter()
+        {
+            _fx_limiter_handle = Bass.BASS_ChannelSetFX(_mixer, BASSFXType.BASS_FX_BFX_COMPRESSOR2, 1);
+            _limiter = new();
         }
     }
 }
