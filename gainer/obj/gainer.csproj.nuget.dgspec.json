@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DiZ\\git\\strimer\\gainer\\gainer.csproj": {}
+    "F:\\git\\strimer\\gainer\\gainer.csproj": {}
   },
   "projects": {
-    "D:\\DiZ\\git\\strimer\\gainer\\gainer.csproj": {
+    "F:\\git\\strimer\\gainer\\gainer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DiZ\\git\\strimer\\gainer\\gainer.csproj",
+        "projectUniqueName": "F:\\git\\strimer\\gainer\\gainer.csproj",
         "projectName": "gainer",
-        "projectPath": "D:\\DiZ\\git\\strimer\\gainer\\gainer.csproj",
-        "packagesPath": "C:\\Users\\Evgeny\\.nuget\\packages\\",
-        "outputPath": "D:\\DiZ\\git\\strimer\\gainer\\obj\\",
+        "projectPath": "F:\\git\\strimer\\gainer\\gainer.csproj",
+        "packagesPath": "C:\\Users\\diz91\\.nuget\\packages\\",
+        "outputPath": "F:\\git\\strimer\\gainer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Evgeny\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\diz91\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

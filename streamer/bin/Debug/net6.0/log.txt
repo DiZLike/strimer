@@ -2083,3 +2083,15 @@
 2025-02-19 11:21:44 > Encoder status: BASS_ACTIVE_PLAYING
 2025-02-19 11:21:44 > Track stream: -2147483640
 2025-02-19 11:21:45 > Playing: stream - Nes Covers - Jurassic park [1\1; Listeners: 0\0]
+2025-02-19 15:20:33 > Version: 0.3.0
+2025-02-19 15:20:33 > Is configured: True
+2025-02-19 15:20:33 > Load playlist
+2025-02-19 15:20:33 > History loaded
+2025-02-19 15:20:33 > No playlist
+2025-02-19 15:35:36 > Version: 0.3.0
+2025-02-19 15:35:36 > Is configured: True
+2025-02-19 15:35:56 > Version: 0.3.0
+2025-02-19 15:35:56 > Is configured: True
+2025-02-19 15:35:56 > Load playlist
+2025-02-19 15:35:56 > History loaded
+2025-02-19 15:35:56 > No playlist

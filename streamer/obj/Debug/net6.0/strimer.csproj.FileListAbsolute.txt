@@ -382,3 +382,16 @@ D:\DiZ\git\strimer\streamer\obj\Debug\net6.0\refint\strimer.dll
 D:\DiZ\git\strimer\streamer\obj\Debug\net6.0\strimer.pdb
 D:\DiZ\git\strimer\streamer\obj\Debug\net6.0\strimer.genruntimeconfig.cache
 D:\DiZ\git\strimer\streamer\obj\Debug\net6.0\ref\strimer.dll
+F:\git\strimer\streamer\bin\Debug\net6.0\bass_dll\linux\aarch64\libbass_fx.so
+F:\git\strimer\streamer\bin\Debug\net6.0\bass_dll\linux\aarch64\libtags.so
+F:\git\strimer\streamer\bin\Debug\net6.0\bass_dll\linux\armhf\libbass_fx.so
+F:\git\strimer\streamer\bin\Debug\net6.0\bass_dll\linux\armhf\libtags.so
+F:\git\strimer\streamer\bin\Debug\net6.0\bass_dll\linux\x86\libbass_fx.so
+F:\git\strimer\streamer\bin\Debug\net6.0\bass_dll\linux\x86\libtags.so
+F:\git\strimer\streamer\bin\Debug\net6.0\bass_dll\linux\x86_64\libbass_fx.so
+F:\git\strimer\streamer\bin\Debug\net6.0\bass_dll\linux\x86_64\libtags.so
+F:\git\strimer\streamer\bin\Debug\net6.0\bass_dll\win\x64\bass_fx.dll
+F:\git\strimer\streamer\bin\Debug\net6.0\bass_dll\win\x64\tags.dll
+F:\git\strimer\streamer\bin\Debug\net6.0\bass_dll\win\x86\bass_fx.dll
+F:\git\strimer\streamer\bin\Debug\net6.0\bass_dll\win\x86\tags.dll
+F:\git\strimer\streamer\bin\Debug\net6.0\TagLib.dll

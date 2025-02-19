@@ -18,10 +18,10 @@ namespace gainer
 			args[0] = "-gain";
 			args[1] = "k";
 			args[2] = "-tag";
-			args[3] = "n";
+			args[3] = "c";
 			args[4] = "-target";
-			args[5] = "-18";
-			args[6] = "C:\\Users\\Evgeny\\Desktop\\new";
+			args[5] = "-23";
+			args[6] = "E:\\Desktop\\new";
 			// -------------------------------------------------------------*/
 			if (args.Length < 7)
 				return;

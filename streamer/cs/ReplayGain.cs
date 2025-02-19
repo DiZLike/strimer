@@ -19,11 +19,12 @@ namespace strimer.cs
         private int _mixer = 0;
         private int _fx_gain_handle = 0;
         private int _fx_limiter_handle = 0;
-        private BASS_BFX_COMPRESSOR2 _gain;
-        private BASS_BFX_COMPRESSOR2 _limiter;
+        private BASS_BFX_COMPRESSOR2 _gain = null!;
+        private BASS_BFX_COMPRESSOR2 _limiter = null!;
         public ReplayGain(bool use_replace_gain, bool use_custom_gain, int mixer)
         {
             _use_replace_gain = use_replace_gain;
+            _use_custom_gain = use_custom_gain;
             _mixer = mixer;
             CreateGainControl();
             CreateLimiter();
@@ -38,7 +39,18 @@ namespace strimer.cs
             _gain.fRatio = 100;
             _gain.fThreshold = 0;
             _gain.fRelease = 250;
-            _gain.fGain = _tag_info.replaygain_track_gain;
+            if (!_use_custom_gain)
+            {
+                _gain.fGain = _tag_info.replaygain_track_gain;
+                Console.WriteLine($"Replay Gain: {_gain.fGain}");
+                Helper.Log($"Replay Gain: {_gain.fGain}");
+            }
+            else
+            {
+                _gain.fGain = GetCustomGain();
+                Console.WriteLine($"Custom Replay Gain: {_gain.fGain}");
+                Helper.Log($"Custom Replay Gain: {_gain.fGain}");
+            }
             Bass.BASS_FXSetParameters(_fx_gain_handle, _gain);
             string error = App.GetErrorMessage();
 
@@ -64,6 +76,14 @@ namespace strimer.cs
         {
             _fx_limiter_handle = Bass.BASS_ChannelSetFX(_mixer, BASSFXType.BASS_FX_BFX_COMPRESSOR2, 1);
             _limiter = new();
+        }
+        private float GetCustomGain()
+        {
+            if (string.IsNullOrEmpty(_tag_info.comment))
+                return 0;
+            string g = _tag_info.comment;
+            string gain = g.Split("=")[1];
+            return float.Parse(gain);
         }
     }
 }

@@ -7,7 +7,7 @@
         static void Main(string[] args)
         {
 			//args = new string[] { @ "-a", "E:\Desktop\test_dir", "/mnt/sd/radio/main/",  @"E:\Desktop\test.pls" }; // -a
-			args = new string[] { "-s", @"C:\Users\Evgeny\Desktop\s_t", "/mnt/sd/radio/main/", "up6jlo4bj6e8yy96w6w3iq84", "http://pub.dlike.ru/add-track", "http://rpi.dlike.ru:82/download/main/" }; // -s
+			//args = new string[] { "-s", @"C:\Users\Evgeny\Desktop\s_t", "/mnt/sd/radio/main/", "up6jlo4bj6e8yy96w6w3iq84", "http://pub.dlike.ru/add-track", "http://rpi.dlike.ru:82/download/main/" }; // -s
 
 			string mode = args[0];              // Режим работы
             if (mode == "-a")                   // Добавление в плейлист
