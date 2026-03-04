@@ -1,11 +1,4 @@
-﻿//PlaylistControl.cs - основной класс со вспомогательными классами (PlaylistItem, ColumnHeader и т.д.)
-//PlaylistControl.Designer.cs - свойства для дизайнера
-//PlaylistControl.Paint.cs - логика отрисовки
-//PlaylistControl.Events.cs - обработчики событий
-//PlaylistControl.Data.cs - работа с данными
-//Constants.cs - константы
-
-using FrostPlayer.Controls.Playlist;
+﻿using FrostPlayer.Controls.Playlist;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -164,16 +157,23 @@ namespace FrostPlayer.Controls
 
         private string GetColumnPropertyName(string columnName)
         {
-            return columnName switch
+            switch (columnName)
             {
-                "Status" => nameof(WidthStatusColumn),
-                "Index" => nameof(WidthIndexColumn),
-                "Artist" => nameof(WidthArtistColumn),
-                "Album" => nameof(WidthAlbumColumn),
-                "Title" => nameof(WidthTitleColumn),
-                "Duration" => nameof(WidthDurationColumn),
-                _ => null
-            };
+                case "Status":
+                    return nameof(WidthStatusColumn);
+                case "Index":
+                    return nameof(WidthIndexColumn);
+                case "Artist":
+                    return nameof(WidthArtistColumn);
+                case "Album":
+                    return nameof(WidthAlbumColumn);
+                case "Title":
+                    return nameof(WidthTitleColumn);
+                case "Duration":
+                    return nameof(WidthDurationColumn);
+                default:
+                    return null;
+            }
         }
 
         public void QueueScrollbarUpdate()

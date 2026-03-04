@@ -54,12 +54,23 @@ namespace FrostPlayer.Controls
             {
                 if (control.GetSortColumnIndex() == columnIndex)
                 {
-                    control.SetSortOrder(control.GetSortOrder() switch
+                    SortOrder currentOrder = control.GetSortOrder();
+                    SortOrder newOrder;
+
+                    switch (currentOrder)
                     {
-                        SortOrder.None => SortOrder.Ascending,
-                        SortOrder.Ascending => SortOrder.Descending,
-                        _ => SortOrder.Ascending
-                    });
+                        case SortOrder.None:
+                            newOrder = SortOrder.Ascending;
+                            break;
+                        case SortOrder.Ascending:
+                            newOrder = SortOrder.Descending;
+                            break;
+                        default:
+                            newOrder = SortOrder.Ascending;
+                            break;
+                    }
+
+                    control.SetSortOrder(newOrder);
                 }
                 else
                 {

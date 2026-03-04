@@ -1,4 +1,6 @@
 ﻿using FrostPlayer.Controls;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace FrostPlayer
 {
@@ -19,230 +21,240 @@ namespace FrostPlayer
 
         private void InitializeComponent()
         {
-            trackInfoLabel = new Label();
-            progressBar = new MediaProgressBar();
-            currentTimeLabel = new Label();
-            durationLabel = new Label();
-            playButton = new Button();
-            stopButton = new Button();
-            prevButton = new Button();
-            nextButton = new Button();
-            addButton = new Button();
-            removeButton = new Button();
-            clearButton = new Button();
-            label1 = new Label();
-            panel1 = new Panel();
-            panel3 = new Panel();
-            volumeControl1 = new VolumeControl();
-            playlist = new PlaylistControl();
-            panel1.SuspendLayout();
-            panel3.SuspendLayout();
-            SuspendLayout();
+            this.trackInfoLabel = new System.Windows.Forms.Label();
+            this.currentTimeLabel = new System.Windows.Forms.Label();
+            this.durationLabel = new System.Windows.Forms.Label();
+            this.playButton = new System.Windows.Forms.Button();
+            this.stopButton = new System.Windows.Forms.Button();
+            this.prevButton = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.playlist = new FrostPlayer.Controls.PlaylistControl();
+            this.volumeControl1 = new FrostPlayer.Controls.VolumeControl();
+            this.progressBar = new FrostPlayer.Controls.MediaProgressBar();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.SuspendLayout();
             // 
             // trackInfoLabel
             // 
-            trackInfoLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            trackInfoLabel.AutoSize = true;
-            trackInfoLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            trackInfoLabel.Location = new Point(12, 15);
-            trackInfoLabel.Name = "trackInfoLabel";
-            trackInfoLabel.Size = new Size(45, 15);
-            trackInfoLabel.TabIndex = 0;
-            trackInfoLabel.Text = "Трек: -";
-            // 
-            // progressBar
-            // 
-            progressBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            progressBar.BarBackgroundColor = Color.FromArgb(240, 240, 240);
-            progressBar.BufferColor = Color.FromArgb(100, 100, 100, 100);
-            progressBar.CurrentTime = 0D;
-            progressBar.Duration = 0D;
-            progressBar.Location = new Point(12, 43);
-            progressBar.Name = "progressBar";
-            progressBar.ProgressColor = Color.DodgerBlue;
-            progressBar.ShowTimeTooltip = false;
-            progressBar.Size = new Size(506, 23);
-            progressBar.TabIndex = 1;
-            progressBar.MouseMove += progressBar_MouseMove;
+            this.trackInfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackInfoLabel.AutoSize = true;
+            this.trackInfoLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.trackInfoLabel.Location = new System.Drawing.Point(12, 15);
+            this.trackInfoLabel.Name = "trackInfoLabel";
+            this.trackInfoLabel.Size = new System.Drawing.Size(45, 15);
+            this.trackInfoLabel.TabIndex = 0;
+            this.trackInfoLabel.Text = "Трек: -";
             // 
             // currentTimeLabel
             // 
-            currentTimeLabel.AutoSize = true;
-            currentTimeLabel.Location = new Point(12, 69);
-            currentTimeLabel.Name = "currentTimeLabel";
-            currentTimeLabel.Size = new Size(34, 13);
-            currentTimeLabel.TabIndex = 2;
-            currentTimeLabel.Text = "00:00";
+            this.currentTimeLabel.AutoSize = true;
+            this.currentTimeLabel.Location = new System.Drawing.Point(12, 69);
+            this.currentTimeLabel.Name = "currentTimeLabel";
+            this.currentTimeLabel.Size = new System.Drawing.Size(34, 13);
+            this.currentTimeLabel.TabIndex = 2;
+            this.currentTimeLabel.Text = "00:00";
             // 
             // durationLabel
             // 
-            durationLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            durationLabel.AutoSize = true;
-            durationLabel.Location = new Point(578, 69);
-            durationLabel.Name = "durationLabel";
-            durationLabel.Size = new Size(28, 13);
-            durationLabel.TabIndex = 3;
-            durationLabel.Text = "0:00";
-            durationLabel.TextAlign = ContentAlignment.TopRight;
+            this.durationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.durationLabel.AutoSize = true;
+            this.durationLabel.Location = new System.Drawing.Point(578, 69);
+            this.durationLabel.Name = "durationLabel";
+            this.durationLabel.Size = new System.Drawing.Size(28, 13);
+            this.durationLabel.TabIndex = 3;
+            this.durationLabel.Text = "0:00";
+            this.durationLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // playButton
             // 
-            playButton.Location = new Point(95, 3);
-            playButton.Name = "playButton";
-            playButton.Size = new Size(86, 30);
-            playButton.TabIndex = 4;
-            playButton.Text = "▶️ Воспр.";
-            playButton.UseVisualStyleBackColor = true;
+            this.playButton.Location = new System.Drawing.Point(95, 3);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(86, 30);
+            this.playButton.TabIndex = 4;
+            this.playButton.Text = "▶️ Воспр.";
+            this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
             // stopButton
             // 
-            stopButton.Location = new Point(187, 3);
-            stopButton.Name = "stopButton";
-            stopButton.Size = new Size(75, 30);
-            stopButton.TabIndex = 5;
-            stopButton.Text = "⏹️ Стоп";
-            stopButton.UseVisualStyleBackColor = true;
+            this.stopButton.Location = new System.Drawing.Point(187, 3);
+            this.stopButton.Name = "stopButton";
+            this.stopButton.Size = new System.Drawing.Size(75, 30);
+            this.stopButton.TabIndex = 5;
+            this.stopButton.Text = "⏹️ Стоп";
+            this.stopButton.UseVisualStyleBackColor = true;
+            this.stopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
             // prevButton
             // 
-            prevButton.Location = new Point(14, 3);
-            prevButton.Name = "prevButton";
-            prevButton.Size = new Size(75, 30);
-            prevButton.TabIndex = 6;
-            prevButton.Text = "⏮️ Пред.";
-            prevButton.UseVisualStyleBackColor = true;
+            this.prevButton.Location = new System.Drawing.Point(14, 3);
+            this.prevButton.Name = "prevButton";
+            this.prevButton.Size = new System.Drawing.Size(75, 30);
+            this.prevButton.TabIndex = 6;
+            this.prevButton.Text = "⏮️ Пред.";
+            this.prevButton.UseVisualStyleBackColor = true;
+            this.prevButton.Click += new System.EventHandler(this.PrevButton_Click);
             // 
             // nextButton
             // 
-            nextButton.Location = new Point(268, 3);
-            nextButton.Name = "nextButton";
-            nextButton.Size = new Size(75, 30);
-            nextButton.TabIndex = 7;
-            nextButton.Text = "⏭️ След.";
-            nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Location = new System.Drawing.Point(268, 3);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(75, 30);
+            this.nextButton.TabIndex = 7;
+            this.nextButton.Text = "⏭️ След.";
+            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // addButton
             // 
-            addButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            addButton.Location = new Point(12, 3);
-            addButton.Name = "addButton";
-            addButton.Size = new Size(90, 30);
-            addButton.TabIndex = 11;
-            addButton.Text = "➕ Добавить";
-            addButton.UseVisualStyleBackColor = true;
+            this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addButton.Location = new System.Drawing.Point(12, 3);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(90, 30);
+            this.addButton.TabIndex = 11;
+            this.addButton.Text = "➕ Добавить";
+            this.addButton.UseVisualStyleBackColor = true;
             // 
             // removeButton
             // 
-            removeButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            removeButton.Location = new Point(108, 3);
-            removeButton.Name = "removeButton";
-            removeButton.Size = new Size(90, 30);
-            removeButton.TabIndex = 12;
-            removeButton.Text = "➖ Удалить";
-            removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.removeButton.Location = new System.Drawing.Point(108, 3);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(90, 30);
+            this.removeButton.TabIndex = 12;
+            this.removeButton.Text = "➖ Удалить";
+            this.removeButton.UseVisualStyleBackColor = true;
             // 
             // clearButton
             // 
-            clearButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            clearButton.Location = new Point(511, 3);
-            clearButton.Name = "clearButton";
-            clearButton.Size = new Size(90, 30);
-            clearButton.TabIndex = 13;
-            clearButton.Text = "🗑️ Очистить";
-            clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.clearButton.Location = new System.Drawing.Point(463, 3);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(90, 30);
+            this.clearButton.TabIndex = 13;
+            this.clearButton.Text = "🗑️ Очистить";
+            this.clearButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 142);
-            label1.Name = "label1";
-            label1.Size = new Size(64, 15);
-            label1.TabIndex = 14;
-            label1.Text = "Плейлист";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(12, 142);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 15);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Плейлист";
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(prevButton);
-            panel1.Controls.Add(playButton);
-            panel1.Controls.Add(stopButton);
-            panel1.Controls.Add(nextButton);
-            panel1.Location = new Point(12, 85);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(600, 36);
-            panel1.TabIndex = 15;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.prevButton);
+            this.panel1.Controls.Add(this.playButton);
+            this.panel1.Controls.Add(this.stopButton);
+            this.panel1.Controls.Add(this.nextButton);
+            this.panel1.Location = new System.Drawing.Point(12, 85);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(600, 36);
+            this.panel1.TabIndex = 15;
             // 
             // panel3
             // 
-            panel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel3.Controls.Add(addButton);
-            panel3.Controls.Add(removeButton);
-            panel3.Controls.Add(clearButton);
-            panel3.Location = new Point(12, 352);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(600, 37);
-            panel3.TabIndex = 17;
-            // 
-            // volumeControl1
-            // 
-            volumeControl1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            volumeControl1.FillColor = Color.DodgerBlue;
-            volumeControl1.Location = new Point(524, 43);
-            volumeControl1.Name = "volumeControl1";
-            volumeControl1.Size = new Size(88, 23);
-            volumeControl1.TabIndex = 18;
-            volumeControl1.Text = "volumeControl1";
-            volumeControl1.ThumbBorderColor = Color.FromArgb(180, 180, 180);
-            volumeControl1.ThumbColor = Color.White;
-            volumeControl1.TrackColor = Color.FromArgb(220, 220, 220);
-            volumeControl1.ValueChanged += VolumeTrackBar_ValueChanged;
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.addButton);
+            this.panel3.Controls.Add(this.removeButton);
+            this.panel3.Controls.Add(this.clearButton);
+            this.panel3.Location = new System.Drawing.Point(12, 352);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(583, 37);
+            this.panel3.TabIndex = 17;
             // 
             // playlist
             // 
-            playlist.AlternateRowBackgroundColor = Color.FromArgb(248, 248, 248);
-            playlist.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            playlist.DurationTextColor = Color.FromArgb(120, 120, 120);
-            playlist.HeaderBackgroundColor = Color.FromArgb(245, 245, 245);
-            playlist.HeaderHeight = 20;
-            playlist.HeaderTextColor = Color.FromArgb(80, 80, 80);
-            playlist.Location = new Point(12, 160);
-            playlist.Name = "playlist";
-            playlist.PlayingIndicatorColor = Color.DodgerBlue;
-            playlist.RowBackgroundColor = Color.White;
-            playlist.RowHeight = 20;
-            playlist.SelectedItem = null;
-            playlist.SelectionColor = Color.FromArgb(200, 230, 255);
-            playlist.Size = new Size(583, 186);
-            playlist.TabIndex = 20;
-            playlist.Text = "playlist";
-            playlist.TextColor = Color.FromArgb(60, 60, 60);
-            playlist.WidthDurationColumn = 90;
+            this.playlist.AlternateRowBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.playlist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.playlist.DurationTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.playlist.HeaderBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.playlist.HeaderHeight = 20;
+            this.playlist.HeaderTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.playlist.Location = new System.Drawing.Point(12, 160);
+            this.playlist.Name = "playlist";
+            this.playlist.PlayingIndicatorColor = System.Drawing.Color.DodgerBlue;
+            this.playlist.RowBackgroundColor = System.Drawing.Color.White;
+            this.playlist.RowHeight = 20;
+            this.playlist.SelectedItem = null;
+            this.playlist.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
+            this.playlist.Size = new System.Drawing.Size(583, 186);
+            this.playlist.TabIndex = 20;
+            this.playlist.Text = "playlist";
+            this.playlist.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.playlist.WidthDurationColumn = 90;
+            // 
+            // volumeControl1
+            // 
+            this.volumeControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.volumeControl1.FillColor = System.Drawing.Color.DodgerBlue;
+            this.volumeControl1.Location = new System.Drawing.Point(524, 43);
+            this.volumeControl1.Name = "volumeControl1";
+            this.volumeControl1.Size = new System.Drawing.Size(88, 23);
+            this.volumeControl1.TabIndex = 18;
+            this.volumeControl1.Text = "volumeControl1";
+            this.volumeControl1.ThumbBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.volumeControl1.ThumbColor = System.Drawing.Color.White;
+            this.volumeControl1.TrackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.volumeControl1.ValueChanged += new System.EventHandler(this.VolumeTrackBar_ValueChanged);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar.BarBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.progressBar.BufferColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.progressBar.CurrentTime = 0D;
+            this.progressBar.Duration = 0D;
+            this.progressBar.Location = new System.Drawing.Point(12, 43);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.ProgressColor = System.Drawing.Color.DodgerBlue;
+            this.progressBar.ShowTimeTooltip = false;
+            this.progressBar.Size = new System.Drawing.Size(506, 23);
+            this.progressBar.TabIndex = 1;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(6F, 13F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(624, 461);
-            Controls.Add(playlist);
-            Controls.Add(volumeControl1);
-            Controls.Add(panel1);
-            Controls.Add(label1);
-            Controls.Add(durationLabel);
-            Controls.Add(currentTimeLabel);
-            Controls.Add(progressBar);
-            Controls.Add(trackInfoLabel);
-            Controls.Add(panel3);
-            Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            MinimumSize = new Size(640, 500);
-            Name = "MainForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Frost Player";
-            Resize += MainForm_Resize;
-            panel1.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(624, 461);
+            this.Controls.Add(this.playlist);
+            this.Controls.Add(this.volumeControl1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.durationLabel);
+            this.Controls.Add(this.currentTimeLabel);
+            this.Controls.Add(this.progressBar);
+            this.Controls.Add(this.trackInfoLabel);
+            this.Controls.Add(this.panel3);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.MinimumSize = new System.Drawing.Size(640, 500);
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Frost Player";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

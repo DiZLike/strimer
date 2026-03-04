@@ -13,16 +13,25 @@ namespace FrostPlayer
 {
     public partial class MainForm : Form
     {
+        private AppConfig _config;
+
         private readonly PlaybackManager _playbackManager;
+        private readonly ConfigManager _configManager;
         private readonly PlaylistService _playlistService;
         private readonly TagService _tagService;
         public MainForm()
         {
             InitializeComponent();
 
+            _config = new AppConfig();
+
+            // Загрузка настроек
+            _configManager = new ConfigManager();
+            _config =_configManager.LoadConfig();
+
             // Инициализация сервисов
             var audioService = new AudioService();
-            _playbackManager = new PlaybackManager(audioService);
+            _playbackManager = new PlaybackManager(_config, audioService);
             _playlistService = new PlaylistService();
             _tagService = new TagService();
 
@@ -44,15 +53,21 @@ namespace FrostPlayer
 
             // Инициализация UI
             UpdatePlayPauseButton();
+            ApplyConfig();
+
+            // Тесты
+        }
+        private void ApplyConfig()
+        {
+            volumeControl1.Value = _config.Volume;
+        }
+        private void SaveConfig()
+        {
+            _config.Volume = volumeControl1.Value;
         }
 
         private void SetupEventHandlers()
         {
-            // Обработчики кнопок
-            playButton.Click += PlayButton_Click;
-            stopButton.Click += StopButton_Click;
-            prevButton.Click += PrevButton_Click;
-            nextButton.Click += NextButton_Click;
 
             // Обработчики других элементов
             progressBar.MouseDown += ProgressBar_MouseDown;
@@ -273,8 +288,7 @@ namespace FrostPlayer
         // Обработчики UI событий
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            if (_playbackManager.CurrentPlaylist.FilePaths.Count > 0 &&
-                string.IsNullOrEmpty(_playbackManager.CurrentFile))
+            if (_playbackManager.CurrentPlaylist.FilePaths.Count > 0 && string.IsNullOrEmpty(_playbackManager.CurrentFile))
             {
                 if (_playbackManager.CurrentPlaylist.CurrentTrackIndex >= 0)
                 {
@@ -433,6 +447,12 @@ namespace FrostPlayer
         private void progressBar_MouseMove(object sender, MouseEventArgs e)
         {
             // Обработка перемещения мыши над прогресс-баром
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveConfig();
+            _configManager.SaveConfig(_config);
         }
     }
 }

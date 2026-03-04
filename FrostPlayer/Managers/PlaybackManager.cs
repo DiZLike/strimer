@@ -8,6 +8,7 @@ namespace FrostPlayer.Managers
 {
     public class PlaybackManager
     {
+        private readonly AppConfig _config;
         private readonly AudioService _audioService;
         private readonly Timer _progressTimer;
 
@@ -22,8 +23,9 @@ namespace FrostPlayer.Managers
         public event Action PlaybackPaused;
         public event Action PlaybackStopped;
 
-        public PlaybackManager(AudioService audioService)
+        public PlaybackManager(AppConfig config, AudioService audioService)
         {
+            _config = config;
             _audioService = audioService;
             CurrentPlaylist = new Playlist();
 
@@ -54,6 +56,7 @@ namespace FrostPlayer.Managers
             {
                 LoadFile(CurrentPlaylist.FilePaths[CurrentPlaylist.CurrentTrackIndex]);
             }
+            SetVolume(_config.Volume);
 
             if (_audioService.Play())
             {
@@ -79,6 +82,7 @@ namespace FrostPlayer.Managers
         {
             if (_audioService.Stop())
             {
+                CurrentFile = String.Empty;
                 IsPlaying = false;
                 IsPaused = false;
                 _progressTimer.Stop();
